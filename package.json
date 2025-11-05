@@ -1,0 +1,32 @@
+{
+  "name": "sona-fullstack-blogging-platform",
+  "version": "1.0.0",
+  "description": "SONA - A Platoform That Amplifies Your Voice",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jamal-Raja/sona-fullstack-blogging-platform.git"
+  },
+  "keywords": [],
+  "author": "Jamal Raja",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jamal-Raja/sona-fullstack-blogging-platform/issues"
+  },
+  "homepage": "https://github.com/Jamal-Raja/sona-fullstack-blogging-platform#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "mysql2": "^3.15.3",
+    "sequelize": "^6.37.7",
+    "sqlite3": "^5.1.7"
+  }
+}
