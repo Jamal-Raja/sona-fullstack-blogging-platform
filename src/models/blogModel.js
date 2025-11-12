@@ -8,6 +8,35 @@ const Blog = sequelize.define("Blog", {
     autoIncrement: true,
     allowNull: false,
   },
+  category: {
+    type: DataTypes.ENUM(
+      "Accounting",
+      "Finance",
+      "Tax",
+      "Strategy",
+      "Leadership",
+      "Technology",
+      "Productivity"
+    ),
+    allowNull: false,
+    validate: {
+      notNull: { msg: "Category is required" },
+      isIn: {
+        args: [
+          [
+            "Accounting",
+            "Finance",
+            "Tax",
+            "Strategy",
+            "Leadership",
+            "Technology",
+            "Productivity",
+          ],
+        ],
+        msg: "Category must be one of the predefined options.",
+      },
+    },
+  },
   title: {
     type: DataTypes.STRING,
     allowNull: false,

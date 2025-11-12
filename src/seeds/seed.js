@@ -1,3 +1,6 @@
+// === SEED FILE TO POPULATE DATABASE WITH INITIAL DATA ===
+// Run this file using the command: node src/seeds/seed.js
+
 const sequelize = require("../config/connection");
 
 const { User, Blog } = require("../models");
@@ -22,6 +25,3 @@ const seedDB = async () => {
 };
 
 seedDB();
-
-// === COMMAND TO SEED DB ===
-// node src/seeds/seed.js
