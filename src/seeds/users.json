@@ -1,0 +1,92 @@
+[
+  {
+    "user_id": 1,
+    "name": "Alice Johnson",
+    "email": "alice.johnson@example.com",
+    "password": "password123"
+  },
+  {
+    "user_id": 2,
+    "name": "Ben Smith",
+    "email": "ben.smith@example.com",
+    "password": "securePass456"
+  },
+  {
+    "user_id": 3,
+    "name": "Clara Hughes",
+    "email": "clara.hughes@example.com",
+    "password": "myPassword789"
+  },
+  {
+    "user_id": 4,
+    "name": "Daniel White",
+    "email": "daniel.white@example.com",
+    "password": "danielPass888"
+  },
+  {
+    "user_id": 5,
+    "name": "Ella Roberts",
+    "email": "ella.roberts@example.com",
+    "password": "ellaStrongPassword"
+  },
+  {
+    "user_id": 6,
+    "name": "Freddie Collins",
+    "email": "freddie.collins@example.com",
+    "password": "freddie2025"
+  },
+  {
+    "user_id": 7,
+    "name": "Grace Williams",
+    "email": "grace.williams@example.com",
+    "password": "gracePass999"
+  },
+  {
+    "user_id": 8,
+    "name": "Hannah Green",
+    "email": "hannah.green@example.com",
+    "password": "hannahSecure888"
+  },
+  {
+    "user_id": 9,
+    "name": "Ian Brooks",
+    "email": "ian.brooks@example.com",
+    "password": "ianPass555"
+  },
+  {
+    "user_id": 10,
+    "name": "Jasmine Patel",
+    "email": "jasmine.patel@example.com",
+    "password": "jasPass777"
+  },
+  {
+    "user_id": 11,
+    "name": "Kyle Anderson",
+    "email": "kyle.anderson@example.com",
+    "password": "kyleSecure444"
+  },
+  {
+    "user_id": 12,
+    "name": "Laura Bennett",
+    "email": "laura.bennett@example.com",
+    "password": "lauraPassword123"
+  },
+  {
+    "user_id": 13,
+    "name": "Martin Clarke",
+    "email": "martin.clarke@example.com",
+    "password": "martinPass888"
+  },
+  {
+    "user_id": 14,
+    "name": "Natalie Davies",
+    "email": "natalie.davies@example.com",
+    "password": "natalieSecure999"
+  },
+  {
+    "user_id": 15,
+    "name": "Owen Foster",
+    "email": "owen.foster@example.com",
+    "password": "owenPass321"
+  }
+]
