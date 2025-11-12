@@ -15,7 +15,9 @@ const seedDB = async () => {
     await User.bulkCreate(userData);
     await Blog.bulkCreate(blogData);
 
-    console.log("Database seeded successfully!");
+    console.log(
+      "\n\x1b[1m\x1b[42m\x1b[30m =====  Database seeded successfully!  ===== \x1b[0m\n"
+    );
 
     process.exit(0); // Exit the process successfully
   } catch (error) {
