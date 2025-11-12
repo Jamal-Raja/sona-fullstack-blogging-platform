@@ -33,6 +33,16 @@ const Blog = sequelize.define("Blog", {
       },
     },
   },
+  // Foreign Key to User Model
+  user_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    // Establishes relationship between Blog and User models
+    references: {
+      model: "Users",
+      key: "user_id",
+    },
+  },
 });
 
 module.exports = Blog;

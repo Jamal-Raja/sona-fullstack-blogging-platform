@@ -1,22 +1,27 @@
 const sequelize = require("../config/connection");
 
-const Blog = require("../models/blogModel");
-const User = require("../models/userModel");
+const { User, Blog } = require("../models");
 
 const blogData = require("./blogs.json");
 const userData = require("./users.json");
 
 const seedDB = async () => {
   try {
+    // Sync database and clear existing data
     await sequelize.sync({ force: true });
     await User.bulkCreate(userData);
     await Blog.bulkCreate(blogData);
+
     console.log("Database seeded successfully!");
+
+    process.exit(0); // Exit the process successfully
   } catch (error) {
     console.error(error);
+    process.exit(1); // Exit the process with an error
   }
 };
 
 seedDB();
+
 // === COMMAND TO SEED DB ===
 // node src/seeds/seed.js

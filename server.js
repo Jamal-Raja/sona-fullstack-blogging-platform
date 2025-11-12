@@ -47,3 +47,21 @@ const runServer = async () => {
 };
 
 runServer();
+
+/**
+ * TO DO
+ * ===== BLOGS ======
+ * 1. CRUD OPERATIONS ON BLOGS ROUTE
+ * 2. ERROR HANDLING ON BLOG ROUTEES (E.g trying to delete blog that dont exist, or updating blog that doesnt exist should throw errror)
+ * 3. IMPLEMENT SPLAT (HANDLES ALL UNDEFINED ROUTES)
+ * 4. ADD FILTERING OPTION FOR ALL BLOGS
+ * ====== USERS ======
+ * 5. CREATE USER MODEL (+POPULATE VIA .JSON SEED)
+ * 6. CRUD OPERATIONS ON USER ROUTE
+ * 7. ERROR HANDLING ON USER ROUTEES (E.g trying to delete blog that dont exist, or updating blog that doesnt exist should throw errror)
+ *
+ * 8. IMPLENT HASHED PASSWORDS
+ * 9. USE BYCRYPT AND JWT TO PROVIDE USER WITH A JWT
+ * 10. ENSURE ONLY LOGGED IN USER CAN EDIT/DELETE OWN POSTS
+ * 11. ADD GLOBAL ERROR HANDLER (https://betterstack.com/community/guides/scaling-nodejs/error-handling-express/)
+ */
