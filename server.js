@@ -1,6 +1,8 @@
 require("dotenv").config({ quiet: true });
-
 const sequelize = require("./src/config/connection.js");
+
+const userRouter = require("./src/routes/userRoutes.js");
+const blogRouter = require("./src/routes/blogRoutes.js");
 
 const express = require("express");
 const app = express();
@@ -9,9 +11,12 @@ const app = express();
 app.use(express.json());
 app.use(express.static("public"));
 
-// app.get("/", (req, res) => {
-//   res.send("Hello World!");
-// });
+app.use("/users", userRouter);
+app.use("/blogs", blogRouter);
+
+// IMPORT MODELS TO SYNC WITH DB
+require("./src/models/blogModel.js");
+require("./src/models/userModel.js");
 
 // START SERVER AFTER DB CONNECTION
 const runServer = async () => {
@@ -24,7 +29,7 @@ const runServer = async () => {
       "MySQL connection established successfully."
     );
 
-    await sequelize.sync();
+    await sequelize.sync({ force: true });
     console.log("Models synced with DB.");
 
     const PORT = process.env.PORT || 3000;
@@ -35,9 +40,9 @@ const runServer = async () => {
       );
     });
   } catch (err) {
+    // HANDLE DB CONNECTION ERRORS
     console.error("DB connection error -> ", err.message);
-    console.error("DB connection error -> ", err);
-    process.exit(1); // Abort start-up due to connection issue
+    process.exit(1);
   }
 };
 
