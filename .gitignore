@@ -2,3 +2,4 @@ node_modules
 challenge.md
 .env
 structure.md
+.DS_Store
