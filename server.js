@@ -1,5 +1,6 @@
 require("dotenv").config({ quiet: true });
 const sequelize = require("./src/config/connection.js");
+const AppError = require("./src/utils/upgradedError");
 
 const userRouter = require("./src/routes/userRoutes.js");
 const blogRouter = require("./src/routes/blogRoutes.js");
@@ -10,9 +11,32 @@ const app = express();
 // MIDDLEWARE
 app.use(express.json());
 app.use(express.static("public"));
-
+// ROUTES
 app.use("/users", userRouter);
 app.use("/blogs", blogRouter);
+// HANDLE UNDEFINED ROUTES
+app.use((req, res, next) => {
+  next(
+    new AppError(
+      `The Route You Have Entered (${req.originalUrl}) Is Invalid`,
+      404
+    )
+  );
+});
+
+// GLOBAL ERROR HANDLER
+app.use((err, req, res, next) => {
+  console.error("ERROR", err);
+
+  const status = err.status || 500;
+
+  res.status(status).json({
+    status: "Error",
+    message: err.isOperational
+      ? err.message
+      : "Something went wrong. Please try again later.",
+  });
+});
 
 // IMPORT MODELS TO SYNC WITH DB
 require("./src/models/blogModel.js");
@@ -49,20 +73,22 @@ const runServer = async () => {
 runServer();
 
 /**
- * TO DO
- * ===== BLOGS ======
- * 1. CRUD OPERATIONS ON BLOGS ROUTE ===IN PROGRESS===
- * 2. ERROR HANDLING ON BLOG ROUTEES (E.g trying to delete blog that dont exist, or updating blog that doesnt exist should throw errror)
- * 3. IMPLEMENT SPLAT (HANDLES ALL UNDEFINED ROUTES)
+ * =======================
+ * =========TO DO=========
+ * =======================
+ * ------ BLOGS ------
+ * 1. CRUD OPERATIONS ON BLOGS ROUTE ===COMPLETO✅===
+ * 2. ERROR HANDLING ON BLOG ROUTEES (E.g trying to delete blog that dont exist, or updating blog that doesnt exist should throw errror) ===COMPLETO✅===
+ * 3. IMPLEMENT SPLAT (HANDLES ALL UNDEFINED ROUTES) ===IN_PROGRESSO⏳===
  * 4. ADD FILTERING OPTION FOR ALL BLOGS
- * ====== USERS ======
- * 5. CREATE USER MODEL (+POPULATE VIA .JSON SEED)
+ * ------ USERS ------
+ * 5. CREATE USER MODEL (+POPULATE VIA .JSON SEED) ===COMPLETO✅===
  * 6. CRUD OPERATIONS ON USER ROUTE
  * 7. ERROR HANDLING ON USER ROUTEES (E.g trying to delete blog that dont exist, or updating blog that doesnt exist should throw errror)
- *
+ * ------ OTHER ------
  * 8. IMPLENT HASHED PASSWORDS
  * 9. USE BYCRYPT AND JWT TO PROVIDE USER WITH A JWT
  * 10. ENSURE ONLY LOGGED IN USER CAN EDIT/DELETE OWN POSTS
  * 11. ADD GLOBAL ERROR HANDLER (https://betterstack.com/community/guides/scaling-nodejs/error-handling-express/)
- * 12. DB SEED DATA ===COMPLETE===
+ * 12. DB SEED DATA ===COMPLETO✅===
  */
