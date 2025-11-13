@@ -79,8 +79,8 @@ runServer();
  * ------ BLOGS ------
  * 1. CRUD OPERATIONS ON BLOGS ROUTE ===COMPLETO✅===
  * 2. ERROR HANDLING ON BLOG ROUTEES (E.g trying to delete blog that dont exist, or updating blog that doesnt exist should throw errror) ===COMPLETO✅===
- * 3. IMPLEMENT SPLAT (HANDLES ALL UNDEFINED ROUTES) ===IN_PROGRESSO⏳===
- * 4. ADD FILTERING OPTION FOR ALL BLOGS
+ * 3. IMPLEMENT UNDEFINED ROUTE HANDLER ===COMPLETO✅===
+ * 4. ADD FILTERING OPTION FOR ALL BLOGS ===IN_PROGRESSO⏳===
  * ------ USERS ------
  * 5. CREATE USER MODEL (+POPULATE VIA .JSON SEED) ===COMPLETO✅===
  * 6. CRUD OPERATIONS ON USER ROUTE
@@ -89,6 +89,6 @@ runServer();
  * 8. IMPLENT HASHED PASSWORDS
  * 9. USE BYCRYPT AND JWT TO PROVIDE USER WITH A JWT
  * 10. ENSURE ONLY LOGGED IN USER CAN EDIT/DELETE OWN POSTS
- * 11. ADD GLOBAL ERROR HANDLER (https://betterstack.com/community/guides/scaling-nodejs/error-handling-express/)
+ * 11. ADD GLOBAL ERROR HANDLER (https://betterstack.com/community/guides/scaling-nodejs/error-handling-express/) ===COMPLETO✅===
  * 12. DB SEED DATA ===COMPLETO✅===
  */

@@ -1,5 +1,6 @@
 const AppError = require("../utils/upgradedError");
 const { Blog } = require("../models");
+const { fn, col, where } = require("sequelize");
 
 const allowedCategories = [
   "Accounting",
@@ -9,19 +10,38 @@ const allowedCategories = [
   "Leadership",
   "Technology",
   "Productivity",
-];
+].map((category) => category.toLowerCase());
 // ===== BLOG CONTROLLERS ======
 // FETCH ALL BLOGS
 exports.fetchAllBlogs = async (req, res, next) => {
-  const allBlogs = await Blog.findAll();
+  const rawFilter = req.query.filter || "";
+  const filter = rawFilter.trim().toLowerCase();
+
+  if (filter && !allowedCategories.includes(filter)) {
+    return next(
+      new AppError(
+        `Invalid filter category. Allowed categories: ${allowedCategories.join(
+          ", "
+        )}`
+      )
+    );
+  }
+
+  const allBlogs = !filter
+    ? await Blog.findAll()
+    : await Blog.findAll({
+        where: where(fn("LOWER", col("category")), filter),
+      });
 
   return res.status(200).json({
     status: "Success",
     message: "Blogs retrieved successfully!",
     results: allBlogs.length,
+    filteredBy: rawFilter || null,
     data: allBlogs,
   });
 };
+
 // CREATE NEW BLOG
 exports.createNewBlog = async (req, res, next) => {
   const { category, title, content, user_id } = req.body;
