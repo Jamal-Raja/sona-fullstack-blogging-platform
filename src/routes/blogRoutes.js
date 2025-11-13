@@ -2,14 +2,14 @@ const express = require("express");
 const router = express.Router();
 const blogController = require("../controllers/blogController");
 
-// Get All Blogs
+// BLOG ROUTES
 router
   .route("/")
-  .get(blogController.fetchAllBlogs)
-  .post(blogController.createNewBlog);
+  .get(blogController.fetchAllBlogs) // get all blogs with optional filtering
+  .post(blogController.createNewBlog); // create new blog
 
 router
-  .route("/:id")
+  .route("/:id") // get, delete or update single blog by id
   .get(blogController.fetchSingleBlog)
   .delete(blogController.deleteBlog)
   .patch(blogController.updateBlog);

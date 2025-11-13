@@ -1,5 +1,8 @@
 require("dotenv").config({ quiet: true });
 const sequelize = require("./src/config/connection.js");
+const SequelizeErrorHandler = require("./src/middleware/sequalizeErrorHandler.js");
+const GlobalErrorHandler = require("./src/middleware/globalErrorHandler.js");
+const UndefinedRouteHandler = require("./src/middleware/undefinedRouteHandler.js");
 const AppError = require("./src/utils/upgradedError");
 
 const userRouter = require("./src/routes/userRoutes.js");
@@ -14,29 +17,10 @@ app.use(express.static("public"));
 // ROUTES
 app.use("/users", userRouter);
 app.use("/blogs", blogRouter);
-// HANDLE UNDEFINED ROUTES
-app.use((req, res, next) => {
-  next(
-    new AppError(
-      `The Route You Have Entered (${req.originalUrl}) Is Invalid`,
-      404
-    )
-  );
-});
+app.use(UndefinedRouteHandler); // HANDLE UNDEFINED ROUTES
 
-// GLOBAL ERROR HANDLER
-app.use((err, req, res, next) => {
-  console.error("ERROR", err);
-
-  const status = err.status || 500;
-
-  res.status(status).json({
-    status: "Error",
-    message: err.isOperational
-      ? err.message
-      : "Something went wrong. Please try again later.",
-  });
-});
+app.use(SequelizeErrorHandler); // SEQUELIZE ERROR HANDLER
+app.use(GlobalErrorHandler); // GLOBAL ERROR HANDLER
 
 // IMPORT MODELS TO SYNC WITH DB
 require("./src/models/blogModel.js");
@@ -80,10 +64,10 @@ runServer();
  * 1. CRUD OPERATIONS ON BLOGS ROUTE ===COMPLETO✅===
  * 2. ERROR HANDLING ON BLOG ROUTEES (E.g trying to delete blog that dont exist, or updating blog that doesnt exist should throw errror) ===COMPLETO✅===
  * 3. IMPLEMENT UNDEFINED ROUTE HANDLER ===COMPLETO✅===
- * 4. ADD FILTERING OPTION FOR ALL BLOGS ===IN_PROGRESSO⏳===
+ * 4. ADD FILTERING OPTION FOR ALL BLOGS ===COMPLETO✅===
  * ------ USERS ------
  * 5. CREATE USER MODEL (+POPULATE VIA .JSON SEED) ===COMPLETO✅===
- * 6. CRUD OPERATIONS ON USER ROUTE
+ * 6. CRUD OPERATIONS ON USER ROUTE ===IN_PROGRESSO⏳===
  * 7. ERROR HANDLING ON USER ROUTEES (E.g trying to delete blog that dont exist, or updating blog that doesnt exist should throw errror)
  * ------ OTHER ------
  * 8. IMPLENT HASHED PASSWORDS
