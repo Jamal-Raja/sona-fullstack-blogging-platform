@@ -6,8 +6,12 @@ const blogController = require("../controllers/blogController");
 router
   .route("/")
   .get(blogController.fetchAllBlogs)
-  .put(blogController.createNewBlog);
+  .post(blogController.createNewBlog);
 
-router.route("/:id");
+router
+  .route("/:id")
+  .get(blogController.fetchSingleBlog)
+  .delete(blogController.deleteBlog)
+  .patch(blogController.updateBlog);
 
 module.exports = router;

@@ -29,7 +29,7 @@ const runServer = async () => {
       "MySQL connection established successfully."
     );
 
-    await sequelize.sync({ force: true });
+    await sequelize.sync();
     console.log("Models synced with DB.");
 
     const PORT = process.env.PORT || 3000;
