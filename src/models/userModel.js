@@ -80,16 +80,16 @@ const User = sequelize.define(
       },
     },
     hooks: {
-      // // Hash password before saving to DB
-      // async beforeCreate(user) {
-      //   user.password = await bcrypt.hash(user.password, 12);
-      // },
-      // // Hash updated password before saving to DB
-      // async beforeUpdate(user) {
-      //   if (user.changed("password")) {
-      //     user.password = await bcrypt.hash(user.password, 12);
-      //   }
-      // },
+      // Hash password before saving to DB
+      async beforeCreate(user) {
+        user.password = await bcrypt.hash(user.password, 12);
+      },
+      // Hash updated password before saving to DB
+      async beforeUpdate(user) {
+        if (user.changed("password")) {
+          user.password = await bcrypt.hash(user.password, 12);
+        }
+      },
     },
   }
 );
