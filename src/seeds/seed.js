@@ -12,8 +12,8 @@ const seedDB = async () => {
   try {
     // Sync database and clear existing data
     await sequelize.sync({ force: true });
-    await User.bulkCreate(userData);
-    await Blog.bulkCreate(blogData);
+    await User.bulkCreate(userData, { individualHooks: true });
+    await Blog.bulkCreate(blogData, { individualHooks: true });
 
     console.log(
       "\n\x1b[1m\x1b[42m\x1b[30m =====  Database seeded successfully!  ===== \x1b[0m\n"
