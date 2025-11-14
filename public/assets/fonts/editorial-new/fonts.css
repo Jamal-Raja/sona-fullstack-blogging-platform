@@ -1,0 +1,46 @@
+/* EDITORIAL NEW – FULL FAMILY */
+
+@font-face {
+  font-family: "Editorial New";
+  src: url("../editorial-new/PPEditorialNew-Regular-BF644b214ff145f.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Editorial New";
+  src: url("../editorial-new/PPEditorialNew-Italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Editorial New";
+  src: url("../editorial-new/PPEditorialNew-Ultralight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Editorial New";
+  src: url("../editorial-new/PPEditorialNew-UltralightItalic.otf")
+    format("opentype");
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Editorial New";
+  src: url("../editorial-new/PPEditorialNew-Ultrabold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Editorial New";
+  src: url("../editorial-new/PPEditorialNew-UltraboldItalic.otf")
+    format("opentype");
+  font-weight: 800;
+  font-style: italic;
+}

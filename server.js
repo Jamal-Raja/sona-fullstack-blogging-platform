@@ -4,6 +4,7 @@ const SequelizeErrorHandler = require("./src/middleware/sequalizeErrorHandler.js
 const GlobalErrorHandler = require("./src/middleware/globalErrorHandler.js");
 const UndefinedRouteHandler = require("./src/middleware/undefinedRouteHandler.js");
 const AppError = require("./src/utils/upgradedError");
+const path = require("path");
 
 const userRouter = require("./src/routes/userRoutes.js");
 const blogRouter = require("./src/routes/blogRoutes.js");
@@ -13,7 +14,8 @@ const app = express();
 
 // MIDDLEWARE
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
+
 // ROUTES
 app.use("/users", userRouter);
 app.use("/blogs", blogRouter);

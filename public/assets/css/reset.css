@@ -1,0 +1,116 @@
+/* -------------------------------------------------------------------------- */
+/*  Tailwind CSS Preflight                                                    */
+/*  Source: https://github.com/tailwindlabs/tailwindcss                       */
+/*  License: MIT                                                              */
+/* -------------------------------------------------------------------------- */
+
+/* 1. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 2. Add border-box sizing */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-colour: #e5e7eb;
+}
+
+/* 3. Inherit text decorations and fonts */
+a {
+  colour: inherit;
+  text-decoration: inherit;
+}
+
+/* 4. Reset heading styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* 5. Reset lists */
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 6. Improve text rendering */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 7. Reset buttons */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+/* 8. Remove text-transform from buttons */
+button,
+select {
+  text-transform: none;
+}
+
+/* 9. Remove spin buttons */
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/* 10. Reset textarea */
+textarea {
+  resize: vertical;
+}
+
+/* 11. Images adapt to parent width */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 12. Remove default fieldset border */
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+/* 13. Reset quotes */
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* 14. Reset table spacing */
+table {
+  border-collapse: collapse;
+}
+
+/* 15. Remove gaps in preformatted text */
+pre {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* 16. Hidden attribute handling */
+[hidden] {
+  display: none;
+}
