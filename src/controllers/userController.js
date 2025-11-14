@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const AppError = require("../utils/upgradedError");
-const { User } = require("../models");
+const { User, Blog } = require("../models");
 const bcrypt = require("bcryptjs");
 const { fn, col, where } = require("sequelize");
 const { verifyUserCredentials } = require("./authController");
@@ -42,8 +42,7 @@ exports.registerUser = async (req, res, next) => {
 
   return res.status(200).json({
     status: "Success",
-    message: "Users registered successfully!",
-    data: newUser,
+    message: `${name} registered successfully!`,
   });
 };
 // USER LOGIN
@@ -93,10 +92,23 @@ exports.deleteUser = async (req, res, next) => {
     message: "User deleted successfully!",
   });
 };
-
+// FETCH USERS BLOGS
 exports.fetchUserBlogs = async (req, res, next) => {
+  const { id } = req.params;
+  // Get user info
+  const { dataValues: user } = await User.findByPk(id);
+  // Get user's blogs
+  const usersBlogs = await Blog.findAll({
+    where: {
+      user_id: id,
+    },
+  });
+
   res.status(200).json({
-    message: "here are all the blogs for this user...",
+    status: "Success",
+    message: `Here are all of ${user.name}'s blogs...`,
+    results: usersBlogs.length || 0,
+    data: usersBlogs,
   });
 };
 // // FETCH SINGLE BLOG
