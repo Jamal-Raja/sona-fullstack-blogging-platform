@@ -72,11 +72,11 @@ const User = sequelize.define(
       },
     },
     defaultScope: {
-      attributes: { exclude: ["password"] },
+      attributes: { exclude: ["password", "passwordConfirmation"] },
     },
     scopes: {
       withPassword: {
-        attributes: { include: ["password"] },
+        attributes: { include: ["password", "passwordConfirmation"] },
       },
     },
     hooks: {
