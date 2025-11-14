@@ -4,7 +4,7 @@ const userController = require("../controllers/userController");
 const { authenticateToken } = require("../middleware/authenticateToken");
 const { verifyOwnership } = require("../middleware/verifyOwnership");
 
-// === ALL USER ROUTES ===
+// === USER ROUTES ===
 // Public
 router.route("/register").post(userController.registerUser);
 router.route("/login").post(userController.loginUser);

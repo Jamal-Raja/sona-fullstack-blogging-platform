@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const blogController = require("../controllers/blogController");
 
-// BLOG ROUTES
+// === BLOG ROUTES ===
 router
   .route("/")
   .get(blogController.fetchAllBlogs) // get all blogs with optional filtering

@@ -67,12 +67,12 @@ runServer();
  * 4. ADD FILTERING OPTION FOR ALL BLOGS ===COMPLETO✅===
  * ------ USERS ------
  * 5. CREATE USER MODEL (+POPULATE VIA .JSON SEED) ===COMPLETO✅===
- * 6. CRUD OPERATIONS ON USER ROUTE ===IN_PROGRESSO⏳===
- * 7. ERROR HANDLING ON USER ROUTEES (E.g trying to delete blog that dont exist, or updating blog that doesnt exist should throw errror)
+ * 6. CRUD OPERATIONS ON USER ROUTE ===COMPLETO✅===
+ * 7. ERROR HANDLING ON USER ROUTEES (E.g trying to delete blog that dont exist, or updating blog that doesnt exist should throw errror) ===COMPLETO✅===
  * ------ OTHER ------
  * 8. IMPLENT HASHED PASSWORDS ===COMPLETO✅===
  * 9. USE BYCRYPT AND JWT TO PROVIDE USER WITH A BEARER TOKEN UPON LOGIN ===COMPLETO✅===
- * 10. ENSURE ONLY LOGGED IN USER CAN EDIT/DELETE OWN POSTS
+ * 10. ENSURE ONLY LOGGED IN USER CAN EDIT/DELETE OWN POSTS ===IN_PROGRESSO⏳===
  * 11. ADD GLOBAL ERROR HANDLER (https://betterstack.com/community/guides/scaling-nodejs/error-handling-express/) ===COMPLETO✅===
  * 12. DB SEED DATA ===COMPLETO✅===
  */

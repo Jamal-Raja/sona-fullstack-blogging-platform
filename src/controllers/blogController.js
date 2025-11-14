@@ -11,6 +11,7 @@ const allowedCategories = [
   "Technology",
   "Productivity",
 ].map((category) => category.toLowerCase());
+
 // ===== BLOG CONTROLLERS ======
 // FETCH ALL BLOGS
 exports.fetchAllBlogs = async (req, res, next) => {
