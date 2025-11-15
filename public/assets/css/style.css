@@ -109,14 +109,19 @@ a {
   color: var(--colour-primary);
 }
 
-/* === HERO SECTION === */
-.hero {
+.divider {
+  background: rebeccapurple;
+}
+
+/* ======= HERO SECTION ======= */
+.hero-section {
   max-width: 1200px;
   display: flex;
   flex-direction: column;
   justify-self: center;
   margin: 3rem 1rem;
   color: var(--colour-primary);
+  margin-bottom: 9rem;
 }
 
 .hero-text {
@@ -165,7 +170,109 @@ a {
   font-size: 1.25rem;
 }
 
-/* ================break================ */
-.pp {
-  height: 200vh;
+/* DIVIDER */
+.custom-shape-divider-top-1763211954 .shape-fill {
+  fill: #f7f5f3;
 }
+/* ================SELECT CATEGORY SECTION================ */
+.sel-category-section {
+  background-color: #e8e8e8;
+  padding-bottom: 3rem;
+}
+
+.sel-cat-content {
+  margin: 0 1rem;
+}
+
+.sel-cat-title {
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+  color: var(--colour-primary);
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  letter-spacing: -0.05em;
+  font-family: "minion-pro-condensed-display";
+  font-size: 1.5rem;
+  max-width: 1200px;
+  width: 100%;
+  justify-self: center;
+}
+
+.category-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-self: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 1rem;
+  position: relative;
+}
+
+.category-container img {
+  max-height: 150px;
+}
+
+.category-container img:hover {
+  transform: scale(1.05);
+}
+
+.sel-cat-cap {
+  position: absolute;
+  top: 50%;
+  color: var(--colour-primary);
+  font-family: "Inter", Helvetica, Arial, sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  width: 50%;
+  background: transparent;
+  line-height: 1;
+}
+
+.cat-showcase {
+  max-width: 1200px;
+  width: 100%;
+  margin-top: 14rem;
+  display: flex;
+  justify-self: center;
+  flex-direction: row;
+  color: var(--colour-primary);
+}
+
+.cat-showcase img {
+}
+
+.cat-left-side,
+.cat-right-side {
+  flex: 1;
+  padding: 1rem;
+}
+
+.cat-left-side {
+  padding-left: 0;
+  padding-right: 4rem;
+}
+
+.cat-right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.subheading {
+  font-family: "Inter", Helvetica, Arial, sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.latest {
+  font-family: "minion-pro-condensed-display";
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/*  */
