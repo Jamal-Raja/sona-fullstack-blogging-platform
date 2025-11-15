@@ -244,6 +244,7 @@ a {
 
 .category-container img:hover {
   transform: scale(1.05);
+  transition: 0s;
 }
 
 .sel-cat-cap {
@@ -266,9 +267,6 @@ a {
   justify-self: center;
   flex-direction: row;
   color: var(--colour-primary);
-}
-
-.cat-showcase img {
 }
 
 .cat-left-side,
