@@ -1,9 +1,20 @@
 import { initFitText } from "./helpers/fitText.js";
 import { initSlideIn } from "./helpers/slideIn.js";
-// import { renderAllBlogs } from "../js/pages/blogs.js";
+import { renderAllBlogs } from "./pages/blogs.js";
 
 window.addEventListener("load", initFitText);
 window.addEventListener("load", initSlideIn);
+
+document.querySelector(".blogs-header").addEventListener("click", (e) => {
+  const btn = e.target.closest("button");
+  if (!btn) return;
+  const filter = btn.dataset.filter;
+  if (!filter) {
+    renderAllBlogs();
+  }
+
+  renderAllBlogs(filter);
+});
 
 // ========== PAGE-SPECIFIC LOGIC ==========
 const page = document.body.id;

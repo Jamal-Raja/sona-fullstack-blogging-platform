@@ -2,9 +2,12 @@ import { formatDate } from "../helpers/formatDate.js";
 
 const URL = "http://localhost:6969";
 
-async function fetchAllBlogs() {
+async function fetchAllBlogs(filter = null) {
   try {
-    const res = await fetch(`${URL}/blogs`);
+    const res = filter
+      ? await fetch(`${URL}/blogs?filter=${filter}`)
+      : await fetch(`${URL}/blogs`);
+
     if (!res.ok) {
       throw new Error("Failed to fetch resource");
     }
@@ -15,9 +18,9 @@ async function fetchAllBlogs() {
   }
 }
 
-async function renderAllBlogs() {
+export async function renderAllBlogs(filter = null) {
   const blogContainerEl = document.getElementById("blogsUl");
-  const { data: allBlogs } = await fetchAllBlogs();
+  const { data: allBlogs } = await fetchAllBlogs(filter);
 
   blogContainerEl.innerHTML = allBlogs
     .map((blog) => {
