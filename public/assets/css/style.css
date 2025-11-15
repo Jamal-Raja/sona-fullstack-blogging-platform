@@ -1,5 +1,67 @@
+/* THEME */
+:root {
+  /* ------------------------------------------------------ */
+  /* PRIMARY BRAND COLOURS – BRIGHT RED / ORANGE FAMILY     */
+  /* ------------------------------------------------------ */
+
+  --colour-primary: #ff340a; /* core bright red-orange */
+  --colour-primary-intense: #ff2100; /* stronger red for emphasis */
+  --colour-primary-light: #ff6a3d; /* lighter tint for hover / soft areas */
+  --colour-primary-soft: #ffe2d6; /* very light tinted background */
+  --colour-primary-bg: #fff5f0; /* subtle warm background section */
+
+  /* Pure red variants (for text accents that pop) */
+  --colour-red: #ff0000;
+  --colour-red-strong: #e60000;
+  --colour-red-light: #ff4d4d;
+  --colour-red-bg: #fff2f2; /* light red background wash */
+
+  /* ------------------------------------------------------ */
+  /* NEUTRALS (TEXT, BORDERS, BACKGROUND BASES)             */
+  /* ------------------------------------------------------ */
+
+  --colour-bg-main: #ffffff;
+  --colour-bg-alt: #f7f5f3;
+  --colour-bg-muted: #f2f2f2;
+  --colour-bg-contrast: #ededed;
+
+  --colour-text-strong: #0b0b0b;
+  --colour-text-main: #111111;
+  --colour-text-soft: #333333;
+  --colour-text-muted: #666666;
+
+  --colour-border: #dddddd;
+  --colour-border-dark: #bfbfbf;
+
+  /* ------------------------------------------------------ */
+  /* SPECIAL ACCENTS                                        */
+  /* ------------------------------------------------------ */
+
+  /* Soft greys used in editorial layouts */
+  --colour-accent-grey: #e8e8e8;
+  --colour-accent-warm: #fff8f4; /* warm highlight area */
+  --colour-accent-cool: #f7f7ff; /* subtle cool alternative */
+
+  /* ------------------------------------------------------ */
+  /* UTILITIES & STATES                                     */
+  /* ------------------------------------------------------ */
+
+  --colour-success: #2ecc71;
+  --colour-warning: #f39c12;
+  --colour-error: #e74c3c;
+
+  --colour-link: var(--colour-primary);
+  --colour-link-hover: var(--colour-primary-intense);
+
+  --border-outline: 1px solid black;
+}
+
 * {
-  font-family: "Editorial New", serif;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  background-color: var(--colour-bg-alt);
 }
 
 a {
@@ -7,15 +69,103 @@ a {
   color: black;
 }
 
+/* NAVBAR SECTION */
 #navbar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: blueviolet;
-  /* color: black; */
+  align-items: center;
+  background-color: var(--colour-bg-alt);
+  color: var(--colour-primary);
+  width: 100%;
+  padding: 1rem 1.5rem;
+  line-height: 1;
+  position: fixed;
+  z-index: 9999;
+}
+
+.logo {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  background: transparent;
+}
+
+.logo a {
+  color: var(--colour-primary);
 }
 
 .links {
   display: flex;
   flex-direction: row;
+  gap: 1.25rem;
+  font-weight: 500;
+  background: transparent;
+}
+
+.links a,
+.links li {
+  background: transparent;
+  color: var(--colour-primary);
+}
+
+/* === HERO SECTION === */
+.hero {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  margin: 3rem 1rem;
+  color: var(--colour-primary);
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text h1 {
+  font-weight: 600;
+  line-height: 1;
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.15em;
+  transform: scaleY(1.2);
+  z-index: 1;
+}
+
+.hero-text h1:nth-of-type(1) {
+  position: relative;
+}
+
+.hero-subheading {
+  width: 46%;
+  padding: 8rem 0 0 0.35rem;
+  font-family: "Inter", Helvetica, Arial, sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.hero-image-container {
+  position: absolute;
+  top: 5rem;
+  right: 0;
+  z-index: 0;
+  max-width: 50%;
+  font-family: "Inter", Helvetica, Arial, sans-serif;
+}
+
+.hero-image-container h1 {
+  font-size: 1.5rem;
+  margin-top: 0.75rem;
+  font-family: "Inter", Helvetica, Arial, sans-serif;
+}
+
+.hero-image-container p {
+  font-family: "minion-pro-condensed-display";
+  font-size: 1.25rem;
+}
+
+/* ================break================ */
+.pp {
+  height: 200vh;
 }

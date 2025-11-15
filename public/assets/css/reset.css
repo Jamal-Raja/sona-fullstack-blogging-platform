@@ -7,6 +7,7 @@
 /* 1. Remove default margin */
 * {
   margin: 0;
+  padding: 0;
 }
 
 /* 2. Add border-box sizing */
@@ -16,12 +17,12 @@
   box-sizing: border-box;
   border-width: 0;
   border-style: solid;
-  border-colour: #e5e7eb;
+  border-color: #e5e7eb;
 }
 
 /* 3. Inherit text decorations and fonts */
 a {
-  colour: inherit;
+  color: inherit;
   text-decoration: inherit;
 }
 
