@@ -1,3 +1,5 @@
+import { formatDate } from "../helpers/formatDate.js";
+
 const URL = "http://localhost:6969";
 
 async function fetchAllBlogs() {
@@ -22,11 +24,11 @@ async function renderAllBlogs() {
       return `
       <li id="${blog.blog_id}">
         <div>
-            <div class="title-and-author-container">
-                <h1>${blog.title}</h1>
+            <div class="title-and-author-container">                
+                    <h1>${blog.title}</h1>                
                 <p>Author: ${blog.user_id}</p>
             </div>
-            <p>${blog.createdAt}</p>
+            <p>Created: ${formatDate(blog.createdAt)}</p>
         </div>
         <p>${blog.content}</p>
     </li>
