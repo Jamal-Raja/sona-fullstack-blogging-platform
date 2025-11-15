@@ -1,45 +1,14 @@
-// Function to fit text within its container by adjusting font size
-function fitTextToContainer(containerSelector, textSelector) {
-  const containers = document.querySelectorAll(containerSelector);
+import { initFitText } from "./helpers/fitText.js";
+import { initSlideIn } from "./helpers/slideIn.js";
 
-  containers.forEach((container) => {
-    const texts = container.querySelectorAll(textSelector);
-    if (!texts.length) return;
+window.addEventListener("load", initFitText);
+window.addEventListener("load", initSlideIn);
 
-    texts.forEach((t) => (t.style.fontSize = "10px"));
+// ========== PAGE-SPECIFIC LOGIC ==========
+const page = document.body.id;
 
-    const containerWidth = container.clientWidth;
-    let fontSize = 10;
-
-    while (
-      [...texts].every((t) => t.scrollWidth <= containerWidth) &&
-      fontSize < 500
-    ) {
-      fontSize++;
-      texts.forEach((t) => (t.style.fontSize = fontSize + "px"));
-    }
-
-    texts.forEach((t) => (t.style.fontSize = fontSize - 1 + "px"));
-  });
+if (page) {
+  import(`./pages/${page}.js`)
+    .then(() => console.log(`Loaded JS for: ${page}`))
+    .catch(() => console.warn(`No JS found for page: ${page}`));
 }
-
-window.addEventListener("load", function () {
-  fitTextToContainer(".dynamic-container", ".dynamic-text");
-});
-
-window.addEventListener("resize", function () {
-  fitTextToContainer(".dynamic-container", ".dynamic-text");
-});
-
-// SLIDE IN ANIMATION WHEN IN VIEW
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  },
-  { threshold: 0.15 }
-);
-document.querySelectorAll(".slide-in").forEach((el) => observer.observe(el));

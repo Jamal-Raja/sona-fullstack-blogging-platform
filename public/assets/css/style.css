@@ -469,3 +469,34 @@ footer a {
   opacity: 0.7;
   transform: translateY(-2px);
 }
+
+/* BLOGS SECTION */
+#blogs-section {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  margin: 0 1rem;
+}
+
+.blogs-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.blogs-header button {
+  cursor: pointer;
+}
+
+.blogs-header button:hover {
+  transform: scale(1.05);
+}
+
+.blogs-header button:active {
+  transform: scale(0.95);
+}
+
+.filters {
+  display: flex;
+  gap: 2rem;
+}

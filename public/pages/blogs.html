@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../assets/css/style.css" />
     <title>Sona | Amplify your voice</title>
   </head>
-  <body>
+  <body id="blogs">
     <!-- NAVBAR -->
     <nav id="navbar" class="slide-in">
       <h1 class="logo slide-in"><a href="../index.html">SONA</a></h1>
@@ -30,36 +30,47 @@
       <!-- HERO SECTION -->
       <section class="hero-section">
         <div class="hero-text dynamic-container">
-          <h1 class="dynamic-text slide-in">LOGIN</h1>
-          <h1 class="dynamic-text slide-in">LOGIN</h1>
+          <h1 class="dynamic-text slide-in">BLOGS</h1>
+          <h1 class="dynamic-text slide-in">BLOGS</h1>
           <p class="hero-subheading">
-            <strong>Back again.</strong>
-            <br /><br />Sign in and slip straight into your writing flow.
-            Everything you left is right where you want it.
+            <strong>A living archive of voices.</strong>
+            <br /><br />Here you will find stories shaped by experience,
+            perspective and quiet moments of observation. <br /><br />Each post
+            is a glimpse into a mind at work, a thought in motion, a feeling
+            captured before it fades. Explore the writing that defines SONA and
+            the people who give it life.
           </p>
           <div class="hero-image-container">
-            <img class="slide-in" src="../assets/images/login.jpg" alt="" />
+            <img
+              class="slide-in"
+              src="../assets/images/blogs-hero.jpg"
+              alt=""
+            />
             <h1>SONA</h1>
             <p>The Platform That Amplifies Your Voice</p>
           </div>
         </div>
       </section>
 
-      <!-- LOGIN SECTION -->
-      <section id="login-seciton" class="centralise">
-        <form action="" method="post" class="login-form">
-          <div>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
+      <!-- BLOGS SECTION -->
+      <section id="blogs-section" class="centralise">
+        <div class="blogs-header">
+          <button>View all blogs</button>
+          <div class="filters">
+            <button>FILTER_1</button>
+            <button>FILTER_2</button>
+            <button>FILTER_3</button>
+            <button>FILTER_4</button>
           </div>
-
-          <div>
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required />
-          </div>
-
-          <button type="submit" class="login-btn">Log In</button>
-        </form>
+        </div>
+        <div id="blogsContainer" class="blogs-container">
+          <ul>
+            <li>BLOG_1</li>
+            <li>BLOG_2</li>
+            <li>BLOG_3</li>
+            <li>BLOG_4</li>
+          </ul>
+        </div>
       </section>
     </main>
 
