@@ -27,13 +27,13 @@ export async function renderAllBlogs(filter = null) {
       return `
       <li id="${blog.blog_id}">
         <div>
-            <div class="title-and-author-container">                
-                    <h1>${blog.title}</h1>                
-                <p>Author: ${blog.user_id}</p>
+            <div class="title-container">                
+                <h1>${blog.title}</h1>                                
             </div>
             <p>Created: ${formatDate(blog.createdAt)}</p>
         </div>
         <p>${blog.content}</p>
+        <p>Author: ${blog.User.name}</p>
     </li>
       `;
     })

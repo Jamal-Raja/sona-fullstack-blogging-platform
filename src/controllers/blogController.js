@@ -1,5 +1,5 @@
 const AppError = require("../utils/upgradedError");
-const { Blog } = require("../models");
+const { Blog, User } = require("../models");
 const { fn, col, where } = require("sequelize");
 
 const allowedCategories = [
@@ -29,9 +29,38 @@ exports.fetchAllBlogs = async (req, res, next) => {
   }
 
   const allBlogs = !filter
-    ? await Blog.findAll()
+    ? await Blog.findAll({
+        include: [
+          {
+            model: User,
+            attributes: ["name"], // only return the name
+          },
+        ],
+        attributes: [
+          "blog_id",
+          "category",
+          "title",
+          "content",
+          "createdAt",
+          "updatedAt",
+        ],
+      })
     : await Blog.findAll({
         where: where(fn("LOWER", col("category")), filter),
+        include: [
+          {
+            model: User,
+            attributes: ["name"],
+          },
+        ],
+        attributes: [
+          "blog_id",
+          "category",
+          "title",
+          "content",
+          "createdAt",
+          "updatedAt",
+        ],
       });
 
   return res.status(200).json({

@@ -530,12 +530,12 @@ footer a {
   transform: scale(0.99);
 }
 
-.title-and-author-container {
+.title-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.title-and-author-container h1 {
+.title-container h1 {
   font-weight: bold;
 }
