@@ -474,7 +474,7 @@ footer a {
 #blogs-section {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin: 0 1rem;
 }
 
@@ -499,4 +499,38 @@ footer a {
 .filters {
   display: flex;
   gap: 2rem;
+}
+
+#blogsUl {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 2rem 1rem;
+  border: 2px solid orchid;
+}
+
+#blogsUl li {
+  border: 2px solid red;
+  border-radius: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  width: calc(50% - 1rem);
+  width: 100%;
+  background-color: rgb(255, 227, 227);
+}
+
+#blogsUl li:hover {
+  transform: scale(1.01);
+}
+
+#blogsUl li:active {
+  transform: scale(0.99);
+}
+
+.title-and-author-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

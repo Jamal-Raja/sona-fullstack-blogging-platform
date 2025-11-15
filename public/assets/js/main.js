@@ -9,6 +9,6 @@ const page = document.body.id;
 
 if (page) {
   import(`./pages/${page}.js`)
-    .then(() => console.log(`Loaded JS for: ${page}`))
+    .then(() => console.log(`Loaded JS for: ${page.toUpperCase()}`))
     .catch(() => console.warn(`No JS found for page: ${page}`));
 }
