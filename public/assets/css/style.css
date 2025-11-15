@@ -390,6 +390,7 @@ footer a {
 
 .register-left-side {
   flex-basis: 1;
+  align-self: center;
   width: 100%;
   margin: 1rem;
   position: relative;
@@ -402,7 +403,7 @@ footer a {
 
 .register-left-side p {
   position: absolute;
-  top: 75%;
+  bottom: 25%;
   left: 25%;
   color: var(--colour-accent-grey);
   z-index: 20;

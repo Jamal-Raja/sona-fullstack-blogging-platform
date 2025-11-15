@@ -1,5 +1,6 @@
 import { initFitText } from "./helpers/fitText.js";
 import { initSlideIn } from "./helpers/slideIn.js";
+// import { renderAllBlogs } from "../js/pages/blogs.js";
 
 window.addEventListener("load", initFitText);
 window.addEventListener("load", initSlideIn);
