@@ -34,8 +34,8 @@ if (page) {
  * ================= TO DO =================
  * - register form creates new user ===COMPLETO✅===
  * - update styling for blog cards ===IN_PROGRESSO⏳===
- * - login form works + updates navbar to include users name ===IN_PROGRESSO⏳===
- * - create admin page so user can (create, update, delete own blogs)
+ * - login form works + updates navbar to include users name ===COMPLETO✅===
+ * - create admin page so user can (create, update, delete own blogs) ===IN_PROGRESSO⏳===
  * - pressing on blog expands it to new page with full details
  * - Finish footer styling
  */
