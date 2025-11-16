@@ -1,6 +1,7 @@
 const AppError = require("../utils/upgradedError");
 const { Blog, User } = require("../models");
 const { fn, col, where } = require("sequelize");
+const { all } = require("../routes/blogRoutes");
 
 const allowedCategories = [
   "Accounting",
@@ -84,7 +85,8 @@ exports.createNewBlog = async (req, res, next) => {
       )
     );
   }
-  if (!allowedCategories.includes(category)) {
+  // IF CATEGORY PROVIDED BY USER IS INVALID --> THROW ERROR
+  if (!allowedCategories.includes(category.toLowerCase())) {
     return next(
       new AppError(
         `Invalid category. Allowed categories: ${allowedCategories.join(", ")}`,
