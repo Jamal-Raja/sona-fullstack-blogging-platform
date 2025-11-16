@@ -40,9 +40,10 @@ export function renderNavbar() {
     // Handle logout
     const logoutEl = document.getElementById("navLinkLogout");
     logoutEl.addEventListener("click", () => {
-      localStorage.removeItem("loggedIn");
       localStorage.removeItem("token");
+      localStorage.removeItem("loggedIn");
       localStorage.removeItem("name");
+      localStorage.removeItem("user_id");
       renderNavbar();
     });
 

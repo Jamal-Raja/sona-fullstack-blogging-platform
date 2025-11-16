@@ -67,6 +67,7 @@ exports.loginUser = async (req, res, next) => {
       message: "User logged in successfully!",
       accessToken,
       name: user.name,
+      user_id: user.user_id,
     });
   } catch (error) {
     next(error);

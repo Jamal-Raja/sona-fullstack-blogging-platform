@@ -527,7 +527,8 @@ footer a {
   gap: 2rem;
 }
 
-#blogsUl {
+#blogsUl,
+#UsersblogsUl {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
@@ -537,7 +538,8 @@ footer a {
   border: 2px solid orchid;
 }
 
-#blogsUl li {
+#blogsUl li,
+#UsersblogsUl li {
   border: 2px solid red;
   border-radius: 1rem;
   padding: 1rem;
@@ -547,11 +549,13 @@ footer a {
   background-color: rgb(255, 227, 227);
 }
 
-#blogsUl li:hover {
+#blogsUl li:hover,
+#UsersblogsUl li:hover {
   transform: scale(1.01);
 }
 
-#blogsUl li:active {
+#blogsUl li:active,
+#UsersblogsUl li:active {
   transform: scale(0.99);
 }
 
@@ -563,4 +567,15 @@ footer a {
 
 .title-container h1 {
   font-weight: bold;
+}
+
+/* USER SECTION */
+#account-section {
+  margin-top: 10rem;
+  padding-top: 10rem;
+  border: 8px solid red;
+}
+
+.rounded {
+  border-radius: 100%;
 }
