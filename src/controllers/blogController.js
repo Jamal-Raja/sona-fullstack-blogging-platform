@@ -1,7 +1,6 @@
 const AppError = require("../utils/upgradedError");
 const { Blog, User } = require("../models");
 const { fn, col, where } = require("sequelize");
-const { all } = require("../routes/blogRoutes");
 
 const allowedCategories = [
   "Accounting",
