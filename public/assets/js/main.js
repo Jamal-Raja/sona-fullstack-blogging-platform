@@ -32,10 +32,15 @@ if (page) {
 
 /**
  * ================= TO DO =================
- * - register form creates new user ===COMPLETO✅===
- * - update styling for blog cards ===IN_PROGRESSO⏳===
- * - login form works + updates navbar to include users name ===COMPLETO✅===
- * - create admin page so user can (create, update, delete own blogs) ===IN_PROGRESSO⏳===
- * - pressing on blog expands it to new page with full details
+ * - user create new blog ===IN_PROGRESSO⏳===
+ * - user delete blog 
+ * - user update blog 
  * - Finish footer styling
+ * - pressing on blog expands it to new page with full details
+ * - update styling for blog cards 
+ 
+ * - create admin page ===COMPLETO✅===
+ * - register form creates new user ===COMPLETO✅===
+ * - render users blogs on my_account page ===COMPLETO✅===
+ * - login form works + updates navbar to include users name ===COMPLETO✅===
  */

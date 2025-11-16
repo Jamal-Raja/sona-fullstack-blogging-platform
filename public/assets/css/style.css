@@ -569,11 +569,26 @@ footer a {
   font-weight: bold;
 }
 
-/* USER SECTION */
+/* ACCOUNT SECTION */
 #account-section {
-  margin-top: 10rem;
   padding-top: 10rem;
-  border: 8px solid red;
+}
+
+#user-controls {
+  display: flex;
+}
+
+.create-blog {
+  padding: 1rem;
+}
+
+.create-blog:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.create-blog:active {
+  transform: scale(0.95);
 }
 
 .rounded {
