@@ -20,6 +20,9 @@ async function fetchAllBlogs(filter = null) {
 
 export async function renderAllBlogs(filter = null) {
   const blogContainerEl = document.getElementById("blogsUl");
+
+  if (!blogContainerEl) return;
+
   const { data: allBlogs } = await fetchAllBlogs(filter);
 
   blogContainerEl.innerHTML = allBlogs
