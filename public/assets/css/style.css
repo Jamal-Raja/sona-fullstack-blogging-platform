@@ -345,6 +345,24 @@ footer a {
   padding: 0 1rem;
 }
 
+.register-warning-message {
+  align-self: center;
+  font-weight: bold;
+  color: var(--colour-success);
+  background-color: #e3ffef;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--colour-success);
+  display: none;
+}
+
+.error {
+  color: var(--colour-error);
+  border: 1px solid var(--colour-error);
+  background-color: #ffdbdb98;
+}
+
 .register-form label {
   font-family: "minion-pro-condensed-display", serif;
   font-size: 1rem;
