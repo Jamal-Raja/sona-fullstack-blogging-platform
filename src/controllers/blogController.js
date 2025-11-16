@@ -169,7 +169,10 @@ exports.updateBlog = async (req, res, next) => {
   if (!blog) {
     return next(new AppError(`No blog found with ID ${id}`, 404));
   }
-  if (req.body.category && !allowedCategories.includes(req.body.category)) {
+  if (
+    req.body.category &&
+    !allowedCategories.includes(req.body.category.toLowerCase())
+  ) {
     return next(
       new AppError(
         `Invalid category. Allowed categories: ${allowedCategories.join(", ")}`,
