@@ -88,6 +88,12 @@ a {
 }
 
 /* NAVBAR SECTION */
+#navbarPlaceholder {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
 #navbar {
   display: flex;
   flex-direction: row;
@@ -98,9 +104,9 @@ a {
   width: 100%;
   padding: 1rem 1.5rem;
   line-height: 1;
-  position: sticky;
+  /* position: sticky;
   top: 0;
-  z-index: 9999;
+  z-index: 9999; */
 }
 
 .hero-email {
@@ -345,7 +351,8 @@ footer a {
   padding: 0 1rem;
 }
 
-.register-warning-message {
+.register-warning-message,
+.login-warning-message {
   align-self: center;
   font-weight: bold;
   color: var(--colour-success);
