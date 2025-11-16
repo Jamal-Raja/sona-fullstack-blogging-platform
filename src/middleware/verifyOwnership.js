@@ -16,7 +16,7 @@ const AppError = require("../utils/upgradedError");
  */
 exports.verifyOwnership = (req, res, next) => {
   const loggedInUserId = req.user.user_id; // ID from decoded JWT
-  const targetUserId = Number(req.params.id); // ID of resource being accessed
+  const targetUserId = Number(req.params.id) || Number(req.body.user_id); // ID of resource being accessed
 
   // Block access if the logged-in user does not own the resource
   if (loggedInUserId !== targetUserId) {
