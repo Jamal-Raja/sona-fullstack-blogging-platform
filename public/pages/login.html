@@ -16,16 +16,9 @@
     <link rel="stylesheet" href="../assets/css/style.css" />
     <title>Sona | Amplify your voice</title>
   </head>
-  <body>
+  <body id="login">
     <!-- NAVBAR -->
-    <nav id="navbar" class="slide-in">
-      <h1 class="logo slide-in"><a href="../index.html">SONA</a></h1>
-      <ul class="links">
-        <li><a href="../pages/blogs.html">Blogs</a></li>
-        <li><a href="../pages/login.html">Login</a></li>
-        <li><a href="../pages/register.html">Register</a></li>
-      </ul>
-    </nav>
+    <header id="navbarPlaceholder"></header>
     <!-- MAIN CONTENT -->
     <main>
       <!-- HERO SECTION -->
@@ -48,7 +41,8 @@
 
       <!-- LOGIN SECTION -->
       <section id="login-seciton" class="centralise">
-        <form action="" method="post" class="login-form">
+        <p class="login-warning-message">LOGIN_MESSSAGE</p>
+        <form id="loginForm" class="login-form">
           <div>
             <label for="email">Email</label>
             <input type="email" id="email" name="email" required />
@@ -78,5 +72,6 @@
     </footer>
 
     <script type="module" src="../assets/js/main.js"></script>
+    <script type="module" src="../assets/js/helpers/loadNavbar.js"></script>
   </body>
 </html>
