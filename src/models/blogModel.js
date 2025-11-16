@@ -50,7 +50,7 @@ const Blog = sequelize.define("Blog", {
     },
   },
   content: {
-    type: DataTypes.STRING,
+    type: DataTypes.TEXT,
     allowNull: false,
     validate: {
       notNull: {
