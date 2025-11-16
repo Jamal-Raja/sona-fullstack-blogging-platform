@@ -11,8 +11,6 @@ newBlogFormEl.addEventListener("submit", (e) => {
     user_id: localStorage.getItem("user_id"),
   };
 
-  console.log("VALUES: ", values);
-
   createNewBlog(values);
 });
 
@@ -27,5 +25,4 @@ async function createNewBlog(blog) {
   });
 
   const data = await res.json();
-  console.log(data);
 }
