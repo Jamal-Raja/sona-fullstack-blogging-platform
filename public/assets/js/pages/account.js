@@ -92,6 +92,8 @@ blogsUlEl.addEventListener("click", (e) => {
     return;
   }
   if (li && li.contains(e.target)) {
+    // store previous page in session storage (to ensure back btn works properly)
+    window.sessionStorage.setItem("previousPage", window.location.pathname);
     window.location.href = `/pages/expanded-blog.html?id=${blogID}`;
   }
 });

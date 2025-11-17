@@ -40,4 +40,10 @@ function renderSingleBlog(blog) {
   const blogToRender = await fetchSingleBlog();
 
   renderSingleBlog(blogToRender);
+
+  const backBtnEl = document.getElementById("back-btn");
+
+  const previousPage = sessionStorage.getItem("previousPage");
+
+  backBtnEl.href = previousPage || "/pages/blogs.html";
 })();

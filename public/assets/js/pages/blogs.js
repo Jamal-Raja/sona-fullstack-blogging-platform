@@ -69,6 +69,7 @@ blogsUlEl.addEventListener("click", (e) => {
   const blogID = li.id;
 
   if (li && li.contains(e.target)) {
+    window.sessionStorage.setItem("previousPage", window.location.pathname);
     window.location.href = `/pages/expanded-blog.html?id=${blogID}`;
   }
 });
