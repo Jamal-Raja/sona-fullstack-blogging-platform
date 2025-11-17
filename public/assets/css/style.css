@@ -727,3 +727,23 @@ footer a {
   border: 1px solid var(--colour-error);
   background-color: #ffdbdb98;
 }
+
+/* EXPANDED BLOG SECTION */
+#expanded-blog-section {
+  height: 100vh;
+}
+
+#expanded-blog-container {
+  border: var(--border-outline);
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 1rem;
+  position: relative;
+  padding: 1rem;
+}
+
+#back-btn {
+  position: absolute;
+  right: 2rem;
+  top: 1rem;
+}

@@ -71,15 +71,27 @@ async function renderUsersBlogs() {
 renderUsersBlogs();
 
 const blogsUlEl = document.getElementById("UsersblogsUl");
-
 blogsUlEl.addEventListener("click", (e) => {
+  const li = e.target.closest("li");
+
+  if (!li || !blogsUlEl.contains(li)) return;
+
+  const blogID = li.id;
+
   if (e.target.matches(".edit-btn")) {
-    const blogID = e.target.closest("li").id;
     window.location.href = `/pages/update-blog.html?id=${blogID}`;
+    return;
   }
   if (e.target.matches(".delete-btn")) {
-    const blogID = e.target.closest("li").id;
     deleteBlog(blogID);
-    renderUsersBlogs();
+
+    (async () => {
+      await renderUsersBlogs();
+    })();
+
+    return;
+  }
+  if (li && li.contains(e.target)) {
+    window.location.href = `/pages/expanded-blog.html?id=${blogID}`;
   }
 });

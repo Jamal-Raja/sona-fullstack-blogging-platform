@@ -110,7 +110,14 @@ exports.createNewBlog = async (req, res, next) => {
 // FETCH SINGLE BLOG
 exports.fetchSingleBlog = async (req, res, next) => {
   const { id } = req.params;
-  const blog = await Blog.findByPk(id);
+  const blog = await Blog.findByPk(id, {
+    include: [
+      {
+        model: User,
+        attributes: ["name"],
+      },
+    ],
+  });
   // Check if blog exists
   if (!blog) {
     return next(new AppError(`No blog found with ID ${id}`, 404));
