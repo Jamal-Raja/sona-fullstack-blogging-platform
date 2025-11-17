@@ -1,3 +1,4 @@
+const { Blog } = require("../models");
 const AppError = require("../utils/upgradedError");
 
 /**
@@ -17,6 +18,24 @@ const AppError = require("../utils/upgradedError");
 exports.verifyOwnership = (req, res, next) => {
   const loggedInUserId = req.user.user_id; // ID from decoded JWT
   const targetUserId = Number(req.params.id) || Number(req.body.user_id); // ID of resource being accessed
+
+  // Block access if the logged-in user does not own the resource
+  if (loggedInUserId !== targetUserId) {
+    return next(
+      new AppError("You do not have permission to access this resource", 403)
+    );
+  }
+
+  next(); // User is the owner → allow the request to proceed
+};
+
+exports.verifyBlogOwnership = async (req, res, next) => {
+  const loggedInUserId = req.user.user_id; // ID from decoded JWT
+  const blog = await Blog.findOne({
+    where: { blog_id: req.params.id },
+  }); // resource trying to be accessed
+
+  const targetUserId = blog.user_id; // ID user who owns the resource being accessed
 
   // Block access if the logged-in user does not own the resource
   if (loggedInUserId !== targetUserId) {
