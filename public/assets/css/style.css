@@ -621,6 +621,16 @@ footer a {
   border-color: #e6dbff;
 }
 
+.filters button[data-filter="finance"] {
+  background: #e9f7f1;
+  border-color: #d6eee5;
+}
+
+.filters button[data-filter="technology"] {
+  background: #eaf7fc;
+  border-color: #d8eef6;
+}
+
 @media (max-width: 800px) {
   .blogs-header {
     flex-direction: column;
