@@ -13,7 +13,7 @@ newBlogFormEl.addEventListener("submit", (e) => {
 
   createNewBlog(values);
 
-  window.open("/pages/account.html");
+  window.location.href = "/pages/account.html";
 });
 
 async function createNewBlog(blog) {
