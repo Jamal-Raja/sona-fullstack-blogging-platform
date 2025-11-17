@@ -34,8 +34,7 @@ checkSessionExpiry();
 
 /**
  * ================= TO DO =================
- * - Finish footer styling ===IN_PROGRESSO⏳=== 
- * - fix favicon icon for all pages
+ * - fix favicon icon for all pages ===IN_PROGRESSO⏳=== 
 
  * - Make responsive Uhhhhhhh!!! ===COMPLETO✅=== 
  * - registration should log u in and open my_account page ===COMPLETO✅=== 
@@ -45,15 +44,15 @@ checkSessionExpiry();
 * - Show alert upon updating blog ===COMPLETO✅===
 * - Show alert upon deleting blog ===COMPLETO✅===
 * - Show alert upon publishing blog ===COMPLETO✅===
- * - Implement 1hr logout timeout ===COMPLETO✅===
- * - pressing on blog expands it to new page with full details ===COMPLETO✅===
- * - user update blog ===COMPLETO✅===
- * - Fix opening new page upon publishing blog ===COMPLETO✅===
- * - user taken back to my_account page when publishing blog ===COMPLETO✅===
- * - user delete blog ===COMPLETO✅===
- * - user create new blog ===COMPLETO✅===
- * - create admin page ===COMPLETO✅===
- * - register form creates new user ===COMPLETO✅===
- * - render users blogs on my_account page ===COMPLETO✅===
- * - login form works + updates navbar to include users name ===COMPLETO✅===
- */
+* - Implement 1hr logout timeout ===COMPLETO✅===
+* - pressing on blog expands it to new page with full details ===COMPLETO✅===
+* - user update blog ===COMPLETO✅===
+* - Fix opening new page upon publishing blog ===COMPLETO✅===
+* - user taken back to my_account page when publishing blog ===COMPLETO✅===
+* - user delete blog ===COMPLETO✅===
+* - user create new blog ===COMPLETO✅===
+* - create admin page ===COMPLETO✅===
+* - register form creates new user ===COMPLETO✅===
+* - render users blogs on my_account page ===COMPLETO✅===
+* - login form works + updates navbar to include users name ===COMPLETO✅===
+*/
