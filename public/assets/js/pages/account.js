@@ -74,7 +74,9 @@ const blogsUlEl = document.getElementById("UsersblogsUl");
 
 blogsUlEl.addEventListener("click", (e) => {
   if (e.target.matches(".edit-btn")) {
-    console.log("hit edit");
+    const blogID = e.target.closest("li").id;
+    // Inject form with blog details
+    window.location.href = `/pages/update-blog.html?id=${blogID}`;
   }
   if (e.target.matches(".delete-btn")) {
     const blogID = e.target.closest("li").id;

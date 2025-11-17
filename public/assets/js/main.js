@@ -38,6 +38,7 @@ if (page) {
  * - pressing on blog expands it to new page with full details
  * - update styling for blog cards 
 
+ * - Fix opening new page upon publishing blog ===COMPLETO✅===
  * - user taken back to my_account page when publishing blog ===COMPLETO✅===
  * - user delete blog ===COMPLETO✅===
  * - user create new blog ===COMPLETO✅===

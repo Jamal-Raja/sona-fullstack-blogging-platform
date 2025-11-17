@@ -634,7 +634,8 @@ footer a {
   height: 100vh;
 }
 
-#newBlogForm {
+#newBlogForm,
+#updateBlogForm {
   width: 100%;
   margin: 5rem 1rem;
   display: flex;
@@ -643,7 +644,8 @@ footer a {
   padding: 0 1rem;
 }
 
-#newBlogForm label {
+#newBlogForm label,
+#updateBlogForm label {
   font-family: "minion-pro-condensed-display", serif;
   font-size: 1.2rem;
   font-style: italic;
@@ -654,7 +656,10 @@ footer a {
 
 #newBlogForm input,
 #newBlogForm textarea,
-#newBlogForm select {
+#newBlogForm select,
+#updateBlogForm input,
+#updateBlogForm textarea,
+#updateBlogForm select {
   width: 100%;
   padding: 0.4rem 0;
   font-size: 1.1rem;
@@ -668,17 +673,22 @@ footer a {
 
 #newBlogForm input:focus,
 #newBlogForm textarea:focus,
-#newBlogForm select:focus {
+#newBlogForm select:focus,
+#updateBlogForm input:focus,
+#updateBlogForm textarea:focus,
+#updateBlogForm select:focus {
   border-bottom-color: var(--colour-primary-light);
   padding-left: 0.3rem;
 }
 
-#newBlogForm textarea {
+#newBlogForm textarea,
+#updateBlogForm textarea {
   resize: vertical;
   min-height: 150px;
 }
 
-#newBlogForm button {
+#newBlogForm button,
+#updateBlogForm button {
   margin: 1.75rem auto;
   padding: 0.7rem 1.4rem;
   font-size: 1rem;
@@ -690,12 +700,14 @@ footer a {
   transition: opacity 0.25s ease, transform 0.2s ease;
 }
 
-#newBlogForm button:hover {
+#newBlogForm button:hover,
+#updateBlogForm button:hover {
   opacity: 0.7;
   transform: translateY(-2px);
 }
 
-#newBlogForm h2 {
+#newBlogForm h2,
+#updateBlogForm h2 {
   text-align: center;
 }
 
