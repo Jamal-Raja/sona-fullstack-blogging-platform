@@ -109,6 +109,28 @@ a {
   transform: translateX(-50%) translateY(0);
 }
 
+.fail-alert {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  background-color: var(--colour-error);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  z-index: 99999;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fail-alert.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
 /* NAVBAR SECTION */
 #navbarPlaceholder {
   position: sticky;
