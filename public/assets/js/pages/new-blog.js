@@ -1,4 +1,4 @@
-const URL = "http://localhost:6969";
+const URL = "";
 
 const newBlogFormEl = document.getElementById("newBlogForm");
 

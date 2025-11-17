@@ -1,7 +1,7 @@
 import { formatDate } from "../helpers/formatDate.js";
 import { showSuccessMessage } from "../helpers/showSuccessMsg.js";
 
-const URL = "http://localhost:6969";
+const URL = "";
 
 async function fetchUsersBlogs() {
   try {

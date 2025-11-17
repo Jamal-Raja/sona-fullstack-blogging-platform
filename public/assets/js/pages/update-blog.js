@@ -1,4 +1,4 @@
-const URL = "http://localhost:6969";
+const URL = "";
 const urlParams = new URLSearchParams(window.location.search);
 const blogID = urlParams.get("id");
 

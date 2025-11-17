@@ -1,6 +1,6 @@
 import { loginUser } from "./login.js";
 
-const URL = "http://localhost:6969";
+const URL = "";
 
 export async function registerUser(user = {}) {
   try {

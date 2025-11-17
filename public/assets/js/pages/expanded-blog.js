@@ -1,6 +1,6 @@
 import { formatDate } from "../helpers/formatDate.js";
 
-const URL = "http://localhost:6969";
+const URL = "";
 const params = new URLSearchParams(window.location.search);
 const blogID = params.get("id");
 

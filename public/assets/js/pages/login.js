@@ -1,7 +1,7 @@
 // Load the navbar after successful login
 import { renderNavbar } from "../helpers/loadNavbar.js";
 
-const URL = "http://localhost:6969";
+const URL = "";
 
 export async function loginUser(credentials = {}) {
   // Send login request
