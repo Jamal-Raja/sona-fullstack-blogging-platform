@@ -21,7 +21,7 @@ export async function loginUser(credentials = {}) {
   function showMessage(message, isError = false) {
     if (!warningEl) return;
     warningEl.style.display = "block";
-    warningEl.classList.toggle("error", isError);]
+    warningEl.classList.toggle("error", isError);
     warningEl.innerText = message;
 
     setTimeout(() => {

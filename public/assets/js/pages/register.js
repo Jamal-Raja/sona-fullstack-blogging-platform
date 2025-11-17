@@ -59,8 +59,6 @@ registerForm.addEventListener("submit", async (e) => {
       email: inputValues.email,
       password: inputValues.password,
     });
-    console.log("registered succesfully");
     return;
   }
-  console.log("NOTTT!!! registered!!!!");
 });
