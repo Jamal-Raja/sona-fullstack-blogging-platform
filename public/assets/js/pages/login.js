@@ -3,7 +3,7 @@ import { renderNavbar } from "../helpers/loadNavbar.js";
 
 const URL = "http://localhost:6969";
 
-async function loginUser(credentials = {}) {
+export async function loginUser(credentials = {}) {
   // Send login request
   const res = await fetch(`${URL}/users/login`, {
     method: "POST",
@@ -19,6 +19,7 @@ async function loginUser(credentials = {}) {
 
   // Display a temporary message to the user
   function showMessage(message, isError = false) {
+    if (!warningEl) return;
     warningEl.style.display = "block";
     warningEl.classList.toggle("error", isError);
     warningEl.innerText = message;
@@ -52,13 +53,15 @@ async function loginUser(credentials = {}) {
 
 const loginFormEl = document.getElementById("loginForm");
 
-loginFormEl.addEventListener("submit", (e) => {
-  e.preventDefault();
+if (loginFormEl) {
+  loginFormEl.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-  const credentials = {
-    email: loginFormEl.email.value,
-    password: loginFormEl.password.value,
-  };
+    const credentials = {
+      email: loginFormEl.email.value,
+      password: loginFormEl.password.value,
+    };
 
-  loginUser(credentials);
-});
+    loginUser(credentials);
+  });
+}

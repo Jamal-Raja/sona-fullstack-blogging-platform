@@ -1,3 +1,5 @@
+import { loginUser } from "./login.js";
+
 const URL = "http://localhost:6969";
 
 export async function registerUser(user = {}) {
@@ -15,6 +17,7 @@ export async function registerUser(user = {}) {
     const warningMsgEl = document.querySelector(".register-warning-message");
 
     function showMessage(message, isError = false) {
+      if (!warningMsgEl) return;
       warningMsgEl.style.display = "block";
       warningMsgEl.classList.toggle("error", isError);
       warningMsgEl.innerText = message;
@@ -27,6 +30,8 @@ export async function registerUser(user = {}) {
 
     if (data.status === "Success") {
       showMessage(data.message, false);
+      const registeredSuccesfully = true;
+      return registeredSuccesfully;
     } else {
       showMessage(data.message, true);
     }
@@ -37,7 +42,7 @@ export async function registerUser(user = {}) {
 
 const registerForm = document.getElementById("registerForm");
 
-registerForm.addEventListener("submit", (e) => {
+registerForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const inputValues = {
@@ -47,5 +52,15 @@ registerForm.addEventListener("submit", (e) => {
     passwordConfirmation: registerForm.password_confirmation.value,
   };
 
-  registerUser(inputValues);
+  const registered = await registerUser(inputValues);
+
+  if (registered) {
+    await loginUser({
+      email: inputValues.email,
+      password: inputValues.password,
+    });
+    console.log("registered succesfully");
+    return;
+  }
+  console.log("NOTTT!!! registered!!!!");
 });

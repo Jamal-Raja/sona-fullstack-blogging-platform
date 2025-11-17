@@ -34,11 +34,11 @@ checkSessionExpiry();
 
 /**
  * ================= TO DO =================
- * - registration should log u in and open my_account page ===IN_PROGRESSO⏳===
  * - Finish footer styling ===IN_PROGRESSO⏳=== 
  * - update title for all html pages 
  * - fix favicon icon for all pages
  * - Make responsive Uhhhhhhh!!!
+ * - registration should log u in and open my_account page ===IN_PROGRESSO⏳===
 
  * - add category to blog cards (maybe change bg-color depending on category) ===COMPLETO✅=== 
  * - update styling for blog cards ===COMPLETO✅===
