@@ -68,7 +68,7 @@ const Blog = sequelize.define("Blog", {
     allowNull: false,
     // Establishes relationship between Blog and User models
     references: {
-      model: "User",
+      model: "Users",
       key: "user_id",
     },
   },
