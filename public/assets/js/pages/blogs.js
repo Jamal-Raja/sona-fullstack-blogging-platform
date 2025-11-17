@@ -44,3 +44,31 @@ export async function renderAllBlogs(filter = null) {
 }
 
 renderAllBlogs();
+
+// ========== BLOG FILTER BUTTONS ==========
+// Load all blogs or filtered blogs when filter buttons are clicked
+document.querySelector(".blogs-header") &&
+  document.querySelector(".blogs-header").addEventListener("click", (e) => {
+    const btn = e.target.closest("button");
+    if (!btn) return;
+    const filter = btn.dataset.filter;
+    if (!filter) {
+      renderAllBlogs();
+    }
+
+    renderAllBlogs(filter);
+  });
+
+// Handle blog expansion
+const blogsUlEl = document.getElementById("blogsUl");
+blogsUlEl.addEventListener("click", (e) => {
+  const li = e.target.closest("li");
+
+  if (!li || !blogsUlEl.contains(li)) return;
+
+  const blogID = li.id;
+
+  if (li && li.contains(e.target)) {
+    window.location.href = `/pages/expanded-blog.html?id=${blogID}`;
+  }
+});

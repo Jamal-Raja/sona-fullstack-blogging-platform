@@ -1,25 +1,10 @@
 import { initFitText } from "./helpers/fitText.js";
 import { initSlideIn } from "./helpers/slideIn.js";
-import { renderAllBlogs } from "./pages/blogs.js";
 
 // ========== GLOBAL INITIALIZATIONS ==========
 // Initialize FitText and SlideIn animations on page load
 window.addEventListener("load", initFitText);
 window.addEventListener("load", initSlideIn);
-
-// ========== BLOG FILTER BUTTONS ==========
-// Load all blogs or filtered blogs when filter buttons are clicked
-document.querySelector(".blogs-header") &&
-  document.querySelector(".blogs-header").addEventListener("click", (e) => {
-    const btn = e.target.closest("button");
-    if (!btn) return;
-    const filter = btn.dataset.filter;
-    if (!filter) {
-      renderAllBlogs();
-    }
-
-    renderAllBlogs(filter);
-  });
 
 // ========== PAGE-SPECIFIC LOGIC ==========
 // Dynamically import JS files based on the current page using the body ID
@@ -32,7 +17,6 @@ if (page) {
 
 /**
  * ================= TO DO =================
- * - pressing on blog expands it to new page with full details ===IN_PROGRESSO⏳===
  * - Show alert when upon publishing blog ===IN_PROGRESSO⏳===
  * - Show alert upone updating blog ===IN_PROGRESSO⏳===
  * - Finish footer styling
@@ -44,6 +28,7 @@ if (page) {
  * - Implement 1hr logout timeout 
  * - Make responsive Uhhhhhhh!!!
 
+ * - pressing on blog expands it to new page with full details ===COMPLETO✅===
  * - user update blog ===COMPLETO✅===
  * - Fix opening new page upon publishing blog ===COMPLETO✅===
  * - user taken back to my_account page when publishing blog ===COMPLETO✅===
