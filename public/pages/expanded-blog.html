@@ -23,16 +23,19 @@
     <main>
       <!-- EXPANDED BLOG SECTION -->
       <section id="expanded-blog-section">
-        <div id="expanded-blog-container" class="centralise">
-          <!-- Anchor href dynamically added depending on which path user came from -->
-          <a id="back-btn" href="">BACK_BTN</a>
-          <strong>
-            <h1 id="title">BLOG TITLE</h1>
-          </strong>
-          <p id="date">CREATED DATE</p>
-          <p id="category">BLOG CATEGORY</p>
-          <p id="content">BLOG CONTENT</p>
-          <p id="author">AUTHOR</p>
+        <div id="expanded-blog-container">
+          <a id="back-btn" href="">BACK</a>
+
+          <h1 id="title" class="expanded-title">BLOG TITLE</h1>
+
+          <p id="meta" class="expanded-meta">
+            <span id="date">DATE</span> ·
+            <span id="author">AUTHOR</span>
+          </p>
+
+          <span id="category" class="expanded-category">CATEGORY</span>
+
+          <p id="content" class="expanded-content">BLOG CONTENT</p>
         </div>
       </section>
     </main>

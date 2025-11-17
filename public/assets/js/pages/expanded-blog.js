@@ -29,11 +29,25 @@ function renderSingleBlog(blog) {
     author: document.getElementById("author"),
   };
 
-  blogView.title.textContent = blog.title;
-  blogView.date.textContent = `Created: ${formatDate(blog.createdAt)}`;
-  blogView.category.textContent = blog.category;
-  blogView.content.textContent = blog.content;
-  blogView.author.textContent = `Author: ${blog.User.name}`;
+  const categoryClass = blog.category.toLowerCase();
+
+  document.getElementById("expanded-blog-container").innerHTML = `
+  <a id="back-btn" href="">BACK</a>
+
+  <h1 id="title" class="expanded-title">${blog.title}</h1>
+
+  <p id="meta" class="expanded-meta">
+    ${formatDate(blog.createdAt)} - ${blog.User.name}
+  </p>
+
+  <span id="category" class="blog-category category-${categoryClass}">
+    ${blog.category}
+  </span>
+
+  <p id="content" class="expanded-content">
+    ${blog.content}
+  </p>
+`;
 }
 
 (async () => {
