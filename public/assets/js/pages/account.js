@@ -50,21 +50,32 @@ async function renderUsersBlogs() {
 
   blogContainerEl.innerHTML = allBlogs
     .map((blog) => {
+      const cat = blog.category.toLowerCase();
+
       return `
-      <li id="${blog.blog_id}">
-        <div>
-            <div class="title-container">
-                <h1>${blog.title}</h1>
-                <div class="blog-controls">
-                  <p id="" class="control-btn edit-btn">Edit</p>
-                  <p id="" class="control-btn delete-btn">Delete</p>
-                </div>
-            </div>
-            <p>Created: ${formatDate(blog.createdAt)}</p>
+      <li class="account-blog-card" id="${blog.blog_id}">
+
+        <div class="blog-card-top">
+          <span class="blog-category category-${cat}">
+            ${blog.category}
+          </span>
         </div>
-        <p>${blog.content}</p>
-    </li>
-      `;
+
+        <h2 class="account-blog-title">${blog.title}</h2>
+
+        <p class="account-blog-meta">
+          ${formatDate(blog.createdAt)} — ${blog.User.name}
+        </p>
+
+        <p class="account-blog-excerpt">${blog.content}</p>
+
+        <div class="account-blog-controls">
+          <button class="control-btn edit-btn">Edit</button>
+          <button class="control-btn delete-btn">Delete</button>
+        </div>
+
+      </li>
+    `;
     })
     .join("");
 }

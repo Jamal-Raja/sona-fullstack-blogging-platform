@@ -34,15 +34,16 @@ checkSessionExpiry();
 
 /**
  * ================= TO DO =================
+ * - add category to blog cards (maybe change bg-color depending on category) ===IN_PROGRESSO⏳===
+ * - registration should log u in and open my_account page ===IN_PROGRESSO⏳===
  * - Finish footer styling
- * - add category to blog cards (maybe change bg-color depending on category)
  * - update styling for blog cards 
  * - update styling for account page
  * - update title for all html pages
  * - fix favicon icon for all pages
  * - Make responsive Uhhhhhhh!!!
 
- * - Show alert upon updating blog ===IN_PROGRESSO⏳===
+ * - Show alert upon updating blog ===COMPLETO✅===
  * - Show alert upon deleting blog ===COMPLETO✅===
  * - Show alert upon publishing blog ===COMPLETO✅===
  * - Implement 1hr logout timeout ===COMPLETO✅===

@@ -552,42 +552,110 @@ footer a {
 #blogsUl,
 #UsersblogsUl {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  padding: 3rem 2rem;
+  max-width: 1500px;
+  margin: 0 auto;
   list-style: none;
-  padding: 0;
-  margin: 2rem 1rem;
 }
 
-#blogsUl li,
-#UsersblogsUl li {
-  border: 2px solid red;
-  border-radius: 1rem;
-  padding: 1rem;
+.blog-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.8rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e6e6e6;
+  transition: all 0.25s ease;
   cursor: pointer;
-  width: calc(50% - 1rem);
-  width: 100%;
-  background-color: rgb(255, 227, 227);
 }
 
-#blogsUl li:hover,
-#UsersblogsUl li:hover {
-  transform: scale(1.01);
+.blog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
 }
 
-#blogsUl li:active,
-#UsersblogsUl li:active {
-  transform: scale(0.99);
+.blog-category {
+  padding: 0.35rem 0.8rem;
+  border-radius: 40px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #333;
+  background: #f2f2f2;
+  border: 1px solid #e2e2e2;
 }
 
-.title-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.category-accounting {
+  background: #eef5ff;
+  border-color: #dbe8ff;
+  color: #375a8c;
+}
+.category-finance {
+  background: #e9f7f1;
+  border-color: #d6eee5;
+  color: #2f6b54;
+}
+.category-tax {
+  background: #fff7e5;
+  border-color: #f5e9cf;
+  color: #7c5d23;
+}
+.category-strategy {
+  background: #f0f0f0;
+  border-color: #e3e3e3;
+  color: #4f4f4f;
+}
+.category-leadership {
+  background: #fdeff4;
+  border-color: #f6dce3;
+  color: #8e3e57;
+}
+.category-technology {
+  background: #eaf7fc;
+  border-color: #d8eef6;
+  color: #2e5f73;
+}
+.category-productivity {
+  background: #f5efff;
+  border-color: #ece3ff;
+  color: #563a8f;
 }
 
-.title-container h1 {
-  font-weight: bold;
+.blog-title {
+  margin: 0.7rem 0 0.6rem;
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.32;
+  color: #1f1f1f;
+}
+
+.blog-meta {
+  font-size: 0.85rem;
+  color: #8f8f8f;
+  margin-bottom: 1.2rem;
+}
+
+.blog-excerpt {
+  font-size: 1rem;
+  line-height: 1.55;
+  color: #444;
+  max-height: 4.8em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 700px) {
+  .blog-card {
+    padding: 1.5rem;
+  }
+
+  .blog-title {
+    font-size: 1.28rem;
+  }
 }
 
 .blog-controls {
@@ -648,6 +716,158 @@ footer a {
 
 .rounded {
   border-radius: 100%;
+}
+
+#UsersblogsUl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  padding: 3rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.account-blog-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.8rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e6e6e6;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.account-blog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
+}
+
+.blog-category {
+  padding: 0.35rem 0.8rem;
+  border-radius: 40px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #333;
+  background: #f2f2f2;
+  border: 1px solid #e2e2e2;
+}
+
+.category-accounting {
+  background: #eef5ff;
+  border-color: #dbe8ff;
+  color: #375a8c;
+}
+.category-finance {
+  background: #e9f7f1;
+  border-color: #d6eee5;
+  color: #2f6b54;
+}
+.category-tax {
+  background: #fff7e5;
+  border-color: #f5e9cf;
+  color: #7c5d23;
+}
+.category-strategy {
+  background: #f0f0f0;
+  border-color: #e3e3e3;
+  color: #4f4f4f;
+}
+.category-leadership {
+  background: #fdeff4;
+  border-color: #f6dce3;
+  color: #8e3e57;
+}
+.category-technology {
+  background: #eaf7fc;
+  border-color: #d8eef6;
+  color: #2e5f73;
+}
+.category-productivity {
+  background: #f5efff;
+  border-color: #ece3ff;
+  color: #563a8f;
+}
+
+.account-blog-title {
+  margin: 0.7rem 0 0.6rem;
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.32;
+  colour: #1f1f1f;
+}
+
+.account-blog-meta {
+  font-size: 0.85rem;
+  color: #8f8f8f;
+  margin-bottom: 1.2rem;
+}
+
+.account-blog-excerpt {
+  font-size: 1rem;
+  line-height: 1.55;
+  color: #444;
+  max-height: 4.8em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.account-blog-controls {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease;
+}
+
+.account-blog-card:hover .account-blog-controls {
+  opacity: 1;
+  visibility: visible;
+}
+
+.control-btn {
+  padding: 0.3rem 0.85rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: #f4f4f4;
+  border: 1px solid #dcdcdc;
+  cursor: pointer;
+}
+
+.edit-btn {
+  color: #2b4ba1;
+}
+
+.delete-btn {
+  color: #a13232;
+}
+
+.edit-btn:hover {
+  background: #ebf0ff;
+  border-color: #b9c8ff;
+}
+
+.delete-btn:hover {
+  background: #ffecec;
+  border-color: #ffcbcb;
+}
+
+@media (max-width: 700px) {
+  .account-blog-card {
+    padding: 1.5rem;
+  }
+  .account-blog-title {
+    font-size: 1.28rem;
+  }
 }
 
 /* NEW BLOG SECTION */

@@ -101,9 +101,13 @@ exports.fetchUserBlogs = async (req, res, next) => {
   const { dataValues: user } = await User.findByPk(id);
   // Get user's blogs
   const usersBlogs = await Blog.findAll({
-    where: {
-      user_id: id,
-    },
+    where: { user_id: id },
+    include: [
+      {
+        model: User,
+        attributes: ["name"],
+      },
+    ],
   });
 
   res.status(200).json({

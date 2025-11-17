@@ -27,18 +27,27 @@ export async function renderAllBlogs(filter = null) {
 
   blogContainerEl.innerHTML = allBlogs
     .map((blog) => {
+      const cat = blog.category.toLowerCase();
+
       return `
-      <li id="${blog.blog_id}">
-        <div>
-            <div class="title-container">                
-                <h1>${blog.title}</h1>                                
-            </div>
-            <p>Created: ${formatDate(blog.createdAt)}</p>
+      <li class="blog-card fancy-card" id="${blog.blog_id}">
+        
+        <div class="blog-card-top">
+          <span class="blog-category category-${cat}">
+            ${blog.category}
+          </span>
         </div>
-        <p>${blog.content}</p>
-        <p>Author: ${blog.User.name}</p>
-    </li>
-      `;
+
+        <h2 class="blog-title">${blog.title}</h2>
+
+        <p class="blog-meta">
+          ${formatDate(blog.createdAt)} — ${blog.User.name}
+        </p>
+
+        <p class="blog-excerpt">${blog.content}</p>
+
+      </li>
+    `;
     })
     .join("");
 }
