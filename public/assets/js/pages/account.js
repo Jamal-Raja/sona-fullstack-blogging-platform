@@ -31,7 +31,6 @@ async function deleteBlog(blog_id) {
       },
     });
     const data = await res.json();
-    console.log(data);
 
     if (!res.ok) {
       throw new Error("Failed to fetch resource");

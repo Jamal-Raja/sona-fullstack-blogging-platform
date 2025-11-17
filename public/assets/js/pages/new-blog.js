@@ -12,6 +12,8 @@ newBlogFormEl.addEventListener("submit", (e) => {
   };
 
   createNewBlog(values);
+
+  window.open("/pages/account.html");
 });
 
 async function createNewBlog(blog) {
