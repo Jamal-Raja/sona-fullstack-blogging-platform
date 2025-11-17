@@ -22,6 +22,25 @@ async function fetchUsersBlogs() {
   }
 }
 
+async function deleteBlog(blog_id) {
+  try {
+    const res = await fetch(`${URL}/blogs/${blog_id}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+    const data = await res.json();
+    console.log(data);
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch resource");
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 async function renderUsersBlogs() {
   const blogContainerEl = document.getElementById("UsersblogsUl");
 
@@ -36,6 +55,10 @@ async function renderUsersBlogs() {
         <div>
             <div class="title-container">
                 <h1>${blog.title}</h1>
+                <div class="blog-controls">
+                  <p id="" class="control-btn edit-btn">Edit</p>
+                  <p id="" class="control-btn delete-btn">Delete</p>
+                </div>
             </div>
             <p>Created: ${formatDate(blog.createdAt)}</p>
         </div>
@@ -47,3 +70,17 @@ async function renderUsersBlogs() {
 }
 
 renderUsersBlogs();
+
+const blogsUlEl = document.getElementById("UsersblogsUl");
+
+blogsUlEl.addEventListener("click", (e) => {
+  if (e.target.matches(".edit-btn")) {
+    console.log("hit edit");
+  }
+  if (e.target.matches(".delete-btn")) {
+    const blogID = e.target.closest("li").id;
+    console.log("blogID: ", blogID);
+    deleteBlog(blogID);
+    renderUsersBlogs();
+  }
+});

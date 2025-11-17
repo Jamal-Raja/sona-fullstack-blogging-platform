@@ -569,6 +569,40 @@ footer a {
   font-weight: bold;
 }
 
+.blog-controls {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  border: var(--border-outline);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+/* SHOWS BLOG CONTROLS WHEN HOVERING LI */
+#UsersblogsUl li:hover .blog-controls {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.control-btn {
+  padding: 0.25rem 0.5rem;
+}
+.control-btn:hover {
+  transform: scale(1.05);
+}
+.control-btn:active {
+  transform: scale(0.95);
+}
+
+.edit-btn {
+  background-color: #2ecc71;
+}
+
+.delete-btn {
+  background-color: red;
+}
 /* ACCOUNT SECTION */
 #account-section {
   padding-top: 10rem;

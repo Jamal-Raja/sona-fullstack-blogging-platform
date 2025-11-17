@@ -2,7 +2,10 @@ const express = require("express");
 const router = express.Router();
 const blogController = require("../controllers/blogController");
 const { authenticateToken } = require("../middleware/authenticateToken");
-const { verifyOwnership } = require("../middleware/verifyOwnership");
+const {
+  verifyOwnership,
+  verifyBlogOwnership,
+} = require("../middleware/verifyOwnership");
 
 // === BLOG ROUTES ===
 router
@@ -13,7 +16,7 @@ router
 router
   .route("/:id") // get, delete or update single blog by id
   .get(blogController.fetchSingleBlog)
-  .delete(authenticateToken, verifyOwnership, blogController.deleteBlog) // (Protected route - requires bearer valid bearer token)
-  .patch(authenticateToken, verifyOwnership, blogController.updateBlog); // (Protected route - requires bearer valid bearer token)
+  .delete(authenticateToken, verifyBlogOwnership, blogController.deleteBlog) // (Protected route - requires bearer valid bearer token)
+  .patch(authenticateToken, verifyBlogOwnership, blogController.updateBlog); // (Protected route - requires bearer valid bearer token)
 
 module.exports = router;
