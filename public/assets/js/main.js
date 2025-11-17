@@ -34,8 +34,6 @@ checkSessionExpiry();
 
 /**
  * ================= TO DO =================
- * - Show alert upon publishing blog ===IN_PROGRESSO⏳===
- * - Show alert upon updating blog ===IN_PROGRESSO⏳===
  * - Finish footer styling
  * - add category to blog cards (maybe change bg-color depending on category)
  * - update styling for blog cards 
@@ -44,6 +42,9 @@ checkSessionExpiry();
  * - fix favicon icon for all pages
  * - Make responsive Uhhhhhhh!!!
 
+ * - Show alert upon updating blog ===IN_PROGRESSO⏳===
+ * - Show alert upon deleting blog ===COMPLETO✅===
+ * - Show alert upon publishing blog ===COMPLETO✅===
  * - Implement 1hr logout timeout ===COMPLETO✅===
  * - pressing on blog expands it to new page with full details ===COMPLETO✅===
  * - user update blog ===COMPLETO✅===

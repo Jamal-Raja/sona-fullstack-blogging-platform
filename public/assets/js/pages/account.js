@@ -1,4 +1,5 @@
 import { formatDate } from "../helpers/formatDate.js";
+import { showSuccessMessage } from "../helpers/showSuccessMsg.js";
 
 const URL = "http://localhost:6969";
 
@@ -84,9 +85,9 @@ blogsUlEl.addEventListener("click", (e) => {
   }
   if (e.target.matches(".delete-btn")) {
     deleteBlog(blogID);
-
     (async () => {
       await renderUsersBlogs();
+      showSuccessMessage("Your blog has been deelted successfully!");
     })();
 
     return;
@@ -97,3 +98,19 @@ blogsUlEl.addEventListener("click", (e) => {
     window.location.href = `/pages/expanded-blog.html?id=${blogID}`;
   }
 });
+
+// ========== SHOW SUCCESS MESSAGE IF BLOG CREATED ==========
+(() => {
+  const blogCreated = sessionStorage.getItem("blogCreated");
+  const blogUpdated = sessionStorage.getItem("blogUpdated");
+
+  if (blogCreated) {
+    showSuccessMessage("Your blog has been published successfully!");
+    sessionStorage.removeItem("blogCreated");
+  }
+
+  if (blogUpdated) {
+    showSuccessMessage("Your blog has been updated successfully!");
+    sessionStorage.removeItem("blogUpdated");
+  }
+})();

@@ -13,6 +13,8 @@ newBlogFormEl.addEventListener("submit", (e) => {
 
   createNewBlog(values);
 
+  sessionStorage.setItem("blogCreated", "true");
+
   window.location.href = "/pages/account.html";
 });
 

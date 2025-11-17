@@ -39,6 +39,7 @@ updateFormEl.addEventListener("submit", (e) => {
   };
 
   updatedlog(updatedBlog);
+  sessionStorage.setItem("blogUpdated", "true");
   window.location.href = "/pages/account.html";
 });
 
