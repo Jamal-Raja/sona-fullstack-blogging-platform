@@ -1,5 +1,6 @@
 import { initFitText } from "./helpers/fitText.js";
 import { initSlideIn } from "./helpers/slideIn.js";
+import { logoutUser } from "./helpers/logout.js";
 
 // ========== GLOBAL INITIALIZATIONS ==========
 // Initialize FitText and SlideIn animations on page load
@@ -15,19 +16,35 @@ if (page) {
     .catch(() => console.warn(`No JS found for page: ${page.toUpperCase()}`));
 }
 
+// ========== SESSION EXPIRY CHECK ==========
+// Auto-logout user after 1 hour of inactivity
+function checkSessionExpiry() {
+  const loginTime = localStorage.getItem("loginTime");
+  if (!loginTime) return; // user not logged in
+
+  const ONE_HOUR = 60 * 60 * 1000;
+  const now = Date.now();
+
+  if (now - loginTime > ONE_HOUR) {
+    logoutUser();
+  }
+}
+
+checkSessionExpiry();
+
 /**
  * ================= TO DO =================
- * - Show alert when upon publishing blog ===IN_PROGRESSO⏳===
- * - Show alert upone updating blog ===IN_PROGRESSO⏳===
+ * - Show alert upon publishing blog ===IN_PROGRESSO⏳===
+ * - Show alert upon updating blog ===IN_PROGRESSO⏳===
  * - Finish footer styling
  * - add category to blog cards (maybe change bg-color depending on category)
  * - update styling for blog cards 
  * - update styling for account page
  * - update title for all html pages
  * - fix favicon icon for all pages
- * - Implement 1hr logout timeout 
  * - Make responsive Uhhhhhhh!!!
 
+ * - Implement 1hr logout timeout ===COMPLETO✅===
  * - pressing on blog expands it to new page with full details ===COMPLETO✅===
  * - user update blog ===COMPLETO✅===
  * - Fix opening new page upon publishing blog ===COMPLETO✅===

@@ -42,6 +42,7 @@ async function loginUser(credentials = {}) {
   localStorage.setItem("loggedIn", true);
   localStorage.setItem("name", data.name);
   localStorage.setItem("user_id", data.user_id);
+  localStorage.setItem("loginTime", Date.now()); // store timestamp in ms
 
   renderNavbar();
 
