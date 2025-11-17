@@ -75,12 +75,10 @@ const blogsUlEl = document.getElementById("UsersblogsUl");
 blogsUlEl.addEventListener("click", (e) => {
   if (e.target.matches(".edit-btn")) {
     const blogID = e.target.closest("li").id;
-    // Inject form with blog details
     window.location.href = `/pages/update-blog.html?id=${blogID}`;
   }
   if (e.target.matches(".delete-btn")) {
     const blogID = e.target.closest("li").id;
-    console.log("blogID: ", blogID);
     deleteBlog(blogID);
     renderUsersBlogs();
   }

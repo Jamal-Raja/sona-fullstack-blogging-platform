@@ -535,7 +535,6 @@ footer a {
   list-style: none;
   padding: 0;
   margin: 2rem 1rem;
-  border: 2px solid orchid;
 }
 
 #blogsUl li,
@@ -573,7 +572,6 @@ footer a {
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  border: var(--border-outline);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -588,6 +586,7 @@ footer a {
 
 .control-btn {
   padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
 }
 .control-btn:hover {
   transform: scale(1.05);

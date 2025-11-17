@@ -32,12 +32,18 @@ if (page) {
 
 /**
  * ================= TO DO =================
- * - user update blog ===IN_PROGRESSO⏳===
- * - Show alert when user creates new blog ===IN_PROGRESSO⏳===
+ * - Show alert when upon publishing blog ===IN_PROGRESSO⏳===
+ * - Show alert upone updating blog ===IN_PROGRESSO⏳===
  * - Finish footer styling
  * - pressing on blog expands it to new page with full details
+ * - add category to blog cards (maybe change bg-color depending on category)
  * - update styling for blog cards 
+ * - update styling for account page
+ * - update title for all html pages
+ * - fix favicon icon for all pages
+ * - Make responsive Uhhhhhhh!!!
 
+ * - user update blog ===COMPLETO✅===
  * - Fix opening new page upon publishing blog ===COMPLETO✅===
  * - user taken back to my_account page when publishing blog ===COMPLETO✅===
  * - user delete blog ===COMPLETO✅===
