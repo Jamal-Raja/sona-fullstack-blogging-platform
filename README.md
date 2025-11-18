@@ -34,6 +34,23 @@ The project is built with a **Node.js + Express + Sequelize** backend and a **va
 
 ## 📸 Screenshots
 
+| Home Page | Blogs Feed |
+|----------|------------|
+| <img src="./public/assets/images/screenshots/homepage hero.png" width="400" alt="Home Page"/> | <img src="./public/assets/images/screenshots/all-blogs.png" width="400" alt="Blogs Feed"/> |
+
+
+| Expanded Blog | My Account |
+|--------------|------------|
+| <img src="./public/assets/images/screenshots/expanded-blog.png" width="400" alt="Expanded Blog"/> | <img src="./public/assets/images/screenshots/my-account.png" width="400" alt="My Account"/> |
+
+| Login | Register |
+|-------|----------|
+| <img src="./public/assets/images/screenshots/login.png" width="400" alt="Login Page"/> | <img src="./public/assets/images/screenshots/register.png" width="400" alt="Register Page"/> |
+
+| Create Blog | Blogs Hero |
+|------------|------------|
+| <img src="./public/assets/images/screenshots/create-blog.png" width="400" alt="Create Blog"/> | <img src="./public/assets/images/screenshots/blogs-hero.png" width="400" alt="Blogs Hero"/> |
+
 ---
 
 ## Features
