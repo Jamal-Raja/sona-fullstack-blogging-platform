@@ -99,6 +99,7 @@ blogsUlEl.addEventListener("click", (e) => {
     (async () => {
       await renderUsersBlogs();
       showSuccessMessage("Your blog has been deleted successfully!");
+      window.reload();
     })();
 
     return;
