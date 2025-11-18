@@ -98,7 +98,7 @@ blogsUlEl.addEventListener("click", (e) => {
     deleteBlog(blogID);
     (async () => {
       await renderUsersBlogs();
-      showSuccessMessage("Your blog has been deelted successfully!");
+      showSuccessMessage("Your blog has been deleted successfully!");
     })();
 
     return;
@@ -114,6 +114,7 @@ blogsUlEl.addEventListener("click", (e) => {
 (() => {
   const blogCreated = sessionStorage.getItem("blogCreated");
   const blogUpdated = sessionStorage.getItem("blogUpdated");
+  const justLoggedIn = sessionStorage.getItem("loggedIn");
 
   if (blogCreated) {
     showSuccessMessage("Your blog has been published successfully!");
@@ -123,5 +124,10 @@ blogsUlEl.addEventListener("click", (e) => {
   if (blogUpdated) {
     showSuccessMessage("Your blog has been updated successfully!");
     sessionStorage.removeItem("blogUpdated");
+  }
+
+  if (justLoggedIn) {
+    showSuccessMessage(`Welcome back ${localStorage.getItem("name")}!`);
+    sessionStorage.removeItem("loggedIn");
   }
 })();

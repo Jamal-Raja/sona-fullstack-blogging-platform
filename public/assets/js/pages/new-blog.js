@@ -1,9 +1,12 @@
+import { showFailedMessage } from "../helpers/showFailureMsg.js";
+
 const URL = "";
 
 const newBlogFormEl = document.getElementById("newBlogForm");
 
-newBlogFormEl.addEventListener("submit", (e) => {
+newBlogFormEl.addEventListener("submit", async (e) => {
   e.preventDefault();
+
   const values = {
     title: newBlogFormEl.title.value,
     category: newBlogFormEl.category.value,
@@ -11,10 +14,14 @@ newBlogFormEl.addEventListener("submit", (e) => {
     user_id: localStorage.getItem("user_id"),
   };
 
-  createNewBlog(values);
+  const { status, message } = await createNewBlog(values);
+
+  if (status == "Error") {
+    showFailedMessage(message);
+    return;
+  }
 
   sessionStorage.setItem("blogCreated", "true");
-
   window.location.href = "/pages/account.html";
 });
 
@@ -29,4 +36,5 @@ async function createNewBlog(blog) {
   });
 
   const data = await res.json();
+  return data;
 }

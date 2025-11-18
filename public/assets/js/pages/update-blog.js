@@ -1,3 +1,5 @@
+import { showFailedMessage } from "../helpers/showFailureMsg.js";
+
 const URL = "";
 const urlParams = new URLSearchParams(window.location.search);
 const blogID = urlParams.get("id");
@@ -25,12 +27,12 @@ async function updatedlog(blog) {
 
   const data = await res.json();
 
-  console.log(data);
+  return data;
 }
 
 const updateFormEl = document.getElementById("updateBlogForm");
 
-updateFormEl.addEventListener("submit", (e) => {
+updateFormEl.addEventListener("submit", async (e) => {
   e.preventDefault();
   const updatedBlog = {
     category: updateFormEl.category.value,
@@ -38,7 +40,13 @@ updateFormEl.addEventListener("submit", (e) => {
     content: updateFormEl.content.value,
   };
 
-  updatedlog(updatedBlog);
+  const { status, message } = await updatedlog(updatedBlog);
+
+  if (status == "Error") {
+    showFailedMessage(message);
+    return;
+  }
+
   sessionStorage.setItem("blogUpdated", "true");
   window.location.href = "/pages/account.html";
 });

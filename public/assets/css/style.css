@@ -109,6 +109,28 @@ a {
   transform: translateX(-50%) translateY(0);
 }
 
+.fail-alert {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  background-color: var(--colour-error);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  z-index: 99999;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fail-alert.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
 /* NAVBAR SECTION */
 #navbarPlaceholder {
   position: sticky;
@@ -579,24 +601,34 @@ footer a {
   transform: translateY(-3px);
 }
 
-.filters button[data-filter="tax"] {
-  background: #fff7e5;
-  border-color: #f1e3c5;
+.filters button[data-filter="creativity"] {
+  background: #f3ecff;
+  border-color: #e4d4ff;
 }
 
-.filters button[data-filter="strategy"] {
-  background: #f0f0f0;
-  border-color: #dedede;
+.filters button[data-filter="mindset"] {
+  background: #e6f4ff;
+  border-color: #d2e8fa;
 }
 
-.filters button[data-filter="Leadership"] {
-  background: #fdeff4;
-  border-color: #f2d8e0;
+.filters button[data-filter="wellbeing"] {
+  background: #e9f9f1;
+  border-color: #d2f0e1;
 }
 
-.filters button[data-filter="productivity"] {
-  background: #f5efff;
-  border-color: #e6dbff;
+.filters button[data-filter="reflection"] {
+  background: #f4f4f4;
+  border-color: #e0e0e0;
+}
+
+.filters button[data-filter="journeys"] {
+  background: #fff4e5;
+  border-color: #f7e0c4;
+}
+
+.filters button[data-filter="culture"] {
+  background: #ffedf1;
+  border-color: #ffd6df;
 }
 
 @media (max-width: 800px) {
@@ -652,40 +684,40 @@ footer a {
   border: 1px solid #e2e2e2;
 }
 
-.category-accounting {
-  background: #eef5ff;
-  border-color: #dbe8ff;
-  color: #375a8c;
+.category-creativity {
+  background: #f3ecff;
+  border-color: #e7d9ff;
+  color: #6a3ea1;
 }
-.category-finance {
-  background: #e9f7f1;
-  border-color: #d6eee5;
+
+.category-mindset {
+  background: #e7f6ff;
+  border-color: #d3ecff;
+  color: #2d6f9e;
+}
+
+.category-wellbeing {
+  background: #e9f9f3;
+  border-color: #d5f1e3;
   color: #2f6b54;
 }
-.category-tax {
-  background: #fff7e5;
-  border-color: #f5e9cf;
-  color: #7c5d23;
-}
-.category-strategy {
-  background: #f0f0f0;
-  border-color: #e3e3e3;
+
+.category-reflection {
+  background: #f4f4f4;
+  border-color: #e6e6e6;
   color: #4f4f4f;
 }
-.category-leadership {
-  background: #fdeff4;
-  border-color: #f6dce3;
-  color: #8e3e57;
+
+.category-journeys {
+  background: #fff3e6;
+  border-color: #f8e2c9;
+  color: #8a5a24;
 }
-.category-technology {
-  background: #eaf7fc;
-  border-color: #d8eef6;
-  color: #2e5f73;
-}
-.category-productivity {
-  background: #f5efff;
-  border-color: #ece3ff;
-  color: #563a8f;
+
+.category-culture {
+  background: #ffedf0;
+  border-color: #ffd9df;
+  color: #a03a56;
 }
 
 .blog-title {
@@ -835,40 +867,40 @@ footer a {
   border: 1px solid #e2e2e2;
 }
 
-.category-accounting {
-  background: #eef5ff;
-  border-color: #dbe8ff;
-  color: #375a8c;
+.category-creativity {
+  background: #f3ecff;
+  border-color: #e4d4ff;
+  color: #5d35a3;
 }
-.category-finance {
-  background: #e9f7f1;
-  border-color: #d6eee5;
+
+.category-mindset {
+  background: #e6f4ff;
+  border-color: #d2e8fa;
+  color: #2d6f9e;
+}
+
+.category-wellbeing {
+  background: #e9f9f1;
+  border-color: #d2f0e1;
   color: #2f6b54;
 }
-.category-tax {
-  background: #fff7e5;
-  border-color: #f5e9cf;
-  color: #7c5d23;
-}
-.category-strategy {
-  background: #f0f0f0;
-  border-color: #e3e3e3;
+
+.category-reflection {
+  background: #f4f4f4;
+  border-color: #e0e0e0;
   color: #4f4f4f;
 }
-.category-leadership {
-  background: #fdeff4;
-  border-color: #f6dce3;
-  color: #8e3e57;
+
+.category-journeys {
+  background: #fff4e5;
+  border-color: #f7e0c4;
+  color: #8a5a24;
 }
-.category-technology {
-  background: #eaf7fc;
-  border-color: #d8eef6;
-  color: #2e5f73;
-}
-.category-productivity {
-  background: #f5efff;
-  border-color: #ece3ff;
-  color: #563a8f;
+
+.category-culture {
+  background: #ffedf1;
+  border-color: #ffd6df;
+  color: #a03a56;
 }
 
 .account-blog-title {
