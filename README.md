@@ -1,7 +1,7 @@
 # SONA – Full-Stack Blogging Platform
 
 - Repository:  https://github.com/Jamal-Raja/sona-fullstack-blogging-platform.git
-- Live App:  https://sona-fullstack-blogging-platform.onrender.com/
+- Live App:  https://sona-fullstack-blogging-platform-production.up.railway.app/
 
 
 ## Overview
