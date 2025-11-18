@@ -88,5 +88,11 @@
     "name": "Owen Foster",
     "email": "owen.foster@example.com",
     "password": "owenPass321"
+  },
+  {
+    "user_id": 16,
+    "name": "Jamal Raja",
+    "email": "jamalraja083@gmail.com",
+    "password": "12345678"
   }
 ]
