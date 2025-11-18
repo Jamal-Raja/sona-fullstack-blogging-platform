@@ -14,11 +14,6 @@ newBlogFormEl.addEventListener("submit", async (e) => {
     user_id: localStorage.getItem("user_id"),
   };
 
-  if (values.content.length > 10) {
-    console.log("less than 10 characters");
-    return;
-  }
-
   const { status, message } = await createNewBlog(values);
 
   if (status == "Error") {

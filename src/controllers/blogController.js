@@ -3,13 +3,12 @@ const { Blog, User } = require("../models");
 const { fn, col, where } = require("sequelize");
 
 const allowedCategories = [
-  "Accounting",
-  "Finance",
-  "Tax",
-  "Strategy",
-  "Leadership",
-  "Technology",
-  "Productivity",
+  "creativity",
+  "mindset",
+  "wellbeing",
+  "reflection",
+  "journeys",
+  "culture",
 ].map((category) => category.toLowerCase());
 
 // ===== BLOG CONTROLLERS ======

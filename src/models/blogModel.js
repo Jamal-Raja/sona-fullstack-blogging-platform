@@ -10,13 +10,12 @@ const Blog = sequelize.define("Blog", {
   },
   category: {
     type: DataTypes.ENUM(
-      "Accounting",
-      "Finance",
-      "Tax",
-      "Strategy",
-      "Leadership",
-      "Technology",
-      "Productivity"
+      "creativity",
+      "mindset",
+      "wellbeing",
+      "reflection",
+      "journeys",
+      "culture"
     ),
     allowNull: false,
     validate: {
@@ -24,13 +23,12 @@ const Blog = sequelize.define("Blog", {
       isIn: {
         args: [
           [
-            "Accounting",
-            "Finance",
-            "Tax",
-            "Strategy",
-            "Leadership",
-            "Technology",
-            "Productivity",
+            "creativity",
+            "mindset",
+            "wellbeing",
+            "reflection",
+            "journeys",
+            "culture",
           ],
         ],
         msg: "Category must be one of the predefined options.",
@@ -46,6 +44,7 @@ const Blog = sequelize.define("Blog", {
       },
       len: {
         args: [5, 69],
+        msg: "Please ensure title is between 5 and 69 characters long",
       },
     },
   },

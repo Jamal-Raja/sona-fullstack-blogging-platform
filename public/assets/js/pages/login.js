@@ -1,5 +1,6 @@
 // Load the navbar after successful login
 import { renderNavbar } from "../helpers/loadNavbar.js";
+import { showFailedMessage } from "../helpers/showFailureMsg.js";
 
 const URL = "";
 
@@ -15,38 +16,23 @@ export async function loginUser(credentials = {}) {
   });
 
   const data = await res.json();
-  const warningEl = document.querySelector(".login-warning-message");
-
-  // Display a temporary message to the user
-  function showMessage(message, isError = false) {
-    if (!warningEl) return;
-    warningEl.style.display = "block";
-    warningEl.classList.toggle("error", isError);
-    warningEl.innerText = message;
-
-    setTimeout(() => {
-      warningEl.innerText = "";
-      warningEl.style.display = "none";
-    }, 5000);
-  }
 
   // Stop if login failed
   if (data.status !== "Success") {
-    showMessage(data.message, true);
+    showFailedMessage(data.message);
     return;
   }
-
-  showMessage(data.message);
 
   // Store login information
   localStorage.setItem("token", data.accessToken);
   localStorage.setItem("loggedIn", true);
   localStorage.setItem("name", data.name);
   localStorage.setItem("user_id", data.user_id);
-  localStorage.setItem("loginTime", Date.now()); // store timestamp in ms
+  localStorage.setItem("loginTime", Date.now());
 
   renderNavbar();
 
+  sessionStorage.setItem("loggedIn", true);
   // Redirect to account page
   window.location.href = "/pages/account.html";
 }
